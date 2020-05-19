@@ -1,0 +1,122 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://fonts/m6x11.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://sprites/pixelbuttons/button.png" type="Texture" id=2]
+[ext_resource path="res://sprites/pixelbuttons/button_pressed.png" type="Texture" id=3]
+[ext_resource path="res://scripts/PlayerButton.gd" type="Script" id=4]
+[ext_resource path="res://sprites/pixelbuttons/arrow.png" type="Texture" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 48
+font_data = ExtResource( 1 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "press"
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("NinePatchRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 3 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Label:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 2, 2 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "release"
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("NinePatchRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 2 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Label:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 2, 1 ) ]
+}
+
+[node name="PlayerButton" type="Control"]
+margin_right = 36.0
+margin_bottom = 12.0
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+margin_right = 36.0
+margin_bottom = 12.0
+texture = ExtResource( 2 )
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 2.0
+margin_top = 1.0
+margin_right = 200.0
+margin_bottom = 73.0
+rect_scale = Vector2( 0.167, 0.167 )
+custom_fonts/font = SubResource( 1 )
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/press = SubResource( 2 )
+anims/release = SubResource( 3 )
+
+[node name="SelectLeft" type="TextureRect" parent="."]
+visible = false
+margin_left = -11.0
+margin_right = 1.0
+margin_bottom = 12.0
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SelectRight" type="TextureRect" parent="."]
+visible = false
+margin_left = 35.0
+margin_right = 47.0
+margin_bottom = 12.0
+texture = ExtResource( 5 )
+flip_h = true

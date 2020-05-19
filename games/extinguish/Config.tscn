@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://games/extinguish/Config.gd" type="Script" id=1]
+
+[node name="Node" type="Node"]
+script = ExtResource( 1 )
+display_name = "Epuja3"
+description = "Empuja a los demas hacia la lava"
+dir_group_0 = 15
+dir_desc_0 = "Moverse"
+dir_group_1 = 12
+dir_desc_1 = "Meh"
+act_group_0 = 1
+act_desc_0 = "Placaje"
+act_group_1 = 2
+act_desc_1 = "Derribo"

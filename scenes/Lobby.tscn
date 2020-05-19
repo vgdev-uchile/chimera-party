@@ -1,0 +1,174 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://scenes/PlayerSelection.tscn" type="PackedScene" id=1]
+[ext_resource path="res://fonts/m6x11.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://scripts/Lobby.gd" type="Script" id=3]
+[ext_resource path="res://scenes/Config.tscn" type="PackedScene" id=4]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.137255, 0.12549, 0.12549, 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 128
+font_data = ExtResource( 2 )
+
+[sub_resource type="Animation" id=3]
+resource_name = "count_down"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Panel/Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ "3", "2", "1" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Panel/Label:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0, 1, 0, 1 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "go"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Panel/Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0, 1, 0, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Panel/Label:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "Empieza!" ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "waiting"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Panel/Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "Esperando" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Panel/Label:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 0, 0, 1 ) ]
+}
+
+[node name="Lobby" type="CanvasLayer"]
+script = ExtResource( 3 )
+
+[node name="Panel" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerSelection" type="Node2D" parent="Panel"]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="PlayerSelection0" parent="Panel/PlayerSelection" instance=ExtResource( 1 )]
+position = Vector2( 300, 1000 )
+
+[node name="PlayerSelection1" parent="Panel/PlayerSelection" instance=ExtResource( 1 )]
+position = Vector2( 740, 1000 )
+
+[node name="PlayerSelection2" parent="Panel/PlayerSelection" instance=ExtResource( 1 )]
+position = Vector2( 1180, 1000 )
+
+[node name="PlayerSelection3" parent="Panel/PlayerSelection" instance=ExtResource( 1 )]
+position = Vector2( 1620, 1000 )
+
+[node name="Label" type="Label" parent="Panel"]
+modulate = Color( 1, 0, 0, 1 )
+anchor_right = 1.0
+margin_right = 0.00012207
+margin_bottom = 400.0
+custom_fonts/font = SubResource( 2 )
+text = "Esperando"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/count_down = SubResource( 3 )
+anims/go = SubResource( 4 )
+anims/waiting = SubResource( 5 )
+next/count_down = "go"
+
+[node name="Config" parent="." instance=ExtResource( 4 )]
+display_name = ""
+description = ""
+game_types = 0
+control_group = false
+cg_name_0 = ""
+cg_name_1 = ""
+dir_group_0 = 0
+dir_desc_0 = ""
+dir_group_1 = 0
+dir_desc_1 = ""
+dir_group_2 = 0
+dir_desc_2 = ""
+dir_group_3 = 0
+dir_desc_3 = ""
+dir_group_4 = 0
+dir_desc_4 = ""
+dir_group_5 = 0
+dir_desc_5 = ""
+dir_group_6 = 0
+dir_desc_6 = ""
+dir_group_7 = 0
+dir_desc_7 = ""
+act_group_0 = 0
+act_desc_0 = ""
+act_group_1 = 0
+act_desc_1 = ""
+act_group_2 = 0
+act_desc_2 = ""
+act_group_3 = 0
+act_desc_3 = ""

@@ -1,0 +1,75 @@
+Chimera Party
+
+Resolución:
+  1920x1080
+
+Puntajes:
+  0 a 100
+
+Inputs:
+  move_left_x
+  move_right_x
+  move_up_x
+  move_down_x
+  action_a_x (color azul)
+  action_b_x (color rojo)
+  donde las x corresponde a un número entre 0 a 3
+
+API:
+  Los colores disponibles son verde, rojo, amarillo, azul
+
+  Party.get_players(): retorna los jugadores actuales, cada jugador se representa como un diccionario {color, points} (color es un índice de 0 a 3, points es un entero)
+
+  Party.end_game(points): indica que la partida terminó y envía los puntajes. El formato de los puntajes debe ser [score_p0, score_p1, score_p2, score_p3]
+
+  Party.get_color_name(index): entrega el nombre del color
+
+  Party.available_colors: Entrega los colores disponibles
+
+  Party.game_type: Entrega el tipo de juego solicitado, los valores posibles son:
+  ALL_FOR_ALL = 0
+	ONE_VS_TWO = 1
+	ONE_VS_TREE = 2
+	TWO_VS_TWO = 3
+
+  Party.groups: Es un array que contiene arrays indicando los grupos. Un ALL_FOR_ALL tendrá solo un elemento con un array conteniendo a todos los jugadores actuales.
+
+  Debe notarse que solo los jugadores que tienen un color son los que están jugando, puede que esté jugando solo el jugador 1 y 2 y no el 0 y 3
+
+Indicaciones:
+  Su mini juego tiene que vivir en una sola carpeta (así como todos sus recursos), por lo cual al crearse su proyecto deben crear una nueva carpeta que se llame games y dentro de esta otra carpeta con el nombre clave de su mini juego (no necesariamente el nombre real)
+
+  En esta carpeta debe haber una escena que se llame index.tscn en la cual viva su juego. (No se permite el cambio de escena)
+
+  Dentro de esta carpeta tiene que vivir la escena Config.tscn la cual se encuentra adjunta al final.
+
+  Tienen que abrir esta escena y completar sus parámetros desde el inspector, no modifiquen el código en sí.
+
+  Display Name: Nombre para mostrar del mini juego
+
+  Description: Descripción del mini juego
+
+  Game Types: Que modos de juego soporta
+
+  Control Group: true si los dos grupos de abajo (0 a 3 y 4 a 7) indican grupos de control y no de jugadores, por ejemplo si tienen un 2 vs donde un grupo tiene un jugador que tala y otro que martilla, tendrían que poner esto en true y asignarle un nombre a Cg Name 0 y Cg Name 1
+
+  Cg Name X: nombres de los grupos de control si es que se usan
+
+
+  Dir Group X
+  Dir Desc X:
+    Grupos de inputs de dirección que se utilizan con su respectiva descripción.
+
+    con X de 0 a 3:
+      Juego por defecto o tipo de jugador 1
+    con X de 3 a 7: 
+      Tipo de jugador 2 (la idea es que se use si crean un juego en grupos donde los grupos tienen controles distintos, como un 1 v/s 3). Para un 2 vs 2 donde hay grupos de control y o de jugadores marcar Control Group
+
+  Act Group X
+  Act Desc X:
+    Grupos de inputs de acción que se utilizan con su respectiva descripción
+
+    con X de 0 a 1:
+      Juego por defecto o tipo de jugador 1
+    con X de 2 a 3:
+      Tipo de jugador 2 (la idea es que se use si crean un juego en grupos donde los grupos tienen controles distintos, como un 1 v/s 3). Para un 2 vs 2 donde hay grupos de control y o de jugadores marcar Control Group
