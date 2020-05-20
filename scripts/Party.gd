@@ -14,6 +14,9 @@ var game_type = GameType.ALL_FOR_ALL
 #var groups = [[0,1],[2,3]]
 var groups = [[0, 1, 2, 3]]
 
+var rounds = 10
+var current_round = 1
+
 onready var Main = get_tree().get_root().get_node("Main") as Main
 var _current_game = ""
 
@@ -131,3 +134,6 @@ func get_color_name(index):
 	
 func _next():
 	Main.next()
+
+func _game_over():
+	Main.start_game()

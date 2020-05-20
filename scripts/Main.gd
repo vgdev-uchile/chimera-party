@@ -30,16 +30,8 @@ var game_state setget set_game_state
 var games = []
 var game_weights = []
 
-var rounds = 10
-var current_round = 1
 
 onready var fade = $Loading/Fade
-
-func load_lobby():
-	load_world("res://scenes/Lobby.tscn")
-
-func start_game():
-	load_world("res://games/extinguish/index.tscn")
 
 func load_world(scene_to_load: String):
 	loading_world = scene_to_load
@@ -50,14 +42,16 @@ func load_world(scene_to_load: String):
 	fade.fade_out()
 	
 	
+func start_game():
+	Party.current_round = 1
+	set_game_state(GameState.MENU)
+	load_games()
 
 func _ready():
 	fade.connect("finished_fading", self, "on_finished_fading")
 	ResourceQueue.start()
 	
-	set_game_state(GameState.MENU)
-
-	load_games()
+	start_game()
 	
 func load_games():
 	var directory: Directory = Directory.new()
@@ -179,11 +173,7 @@ func next():
 		GameState.GAME:
 			set_game_state(GameState.SCORES)
 		GameState.SCORES:
-			if current_round == rounds:
-				# The game ended, change title on Scores scene
-				pass
-			else:
-				set_game_state(GameState.INTRO)
+			set_game_state(GameState.INTRO)
 
 func set_game_state(new_state):
 	game_state = new_state

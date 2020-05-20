@@ -10,6 +10,7 @@ var current_state = State.WAITING
 onready var player_selection = $Panel/PlayerSelection
 
 func _ready():
+	Party._players = []
 	for i in range(4):
 		release_slot(i)
 		player_selection.get_child(i).connect("leave", self, "release_slot")
