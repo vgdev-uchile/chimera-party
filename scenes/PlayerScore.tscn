@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scenes/Dino.tscn" type="PackedScene" id=1]
+[ext_resource path="res://fonts/Fjalla_One/FjallaOne-Regular.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 100
+font_data = ExtResource( 2 )
+
+[node name="PlayerScore" type="HBoxContainer"]
+margin_right = 633.0
+margin_bottom = 384.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Dino" parent="." instance=ExtResource( 1 )]
+margin_right = 384.0
+margin_bottom = 384.0
+rect_min_size = Vector2( 384, 384 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 388.0
+margin_top = 129.0
+margin_right = 633.0
+margin_bottom = 255.0
+rect_min_size = Vector2( 245, 0 )
+custom_fonts/font = SubResource( 1 )
+text = "10000"
+align = 2

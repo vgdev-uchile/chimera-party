@@ -18,6 +18,10 @@ enum Action {
 
 onready var Players = $Panel/Preview/Players
 
+#[{player, dino}]
+var player_dinos = []
+var players_ready = 0
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -87,9 +91,25 @@ func _ready():
 			var dino = Dino.instance()
 			dino.dino_color = Party.get_players()[player].color
 			Players.add_child(dino)
+			player_dinos.append({"player": player, "dino": dino})
 		if i == 0:
 			Players.move_child(Players.get_node("VS"), Players.get_child_count() - 1)
+	
+	$Timer.connect("timeout", self, "on_timeout")
+
+func on_timeout():
+	Party._next()
 
 func _input(event):
-	if event.is_action_pressed("test1"):
-		Party._next()
+	var just_pressed = event.is_pressed() and not event.is_echo()
+	for player_dino in player_dinos:
+		if event.is_action_pressed("action_a_" + str(player_dino.player)) and just_pressed:
+			player_dino.dino.ok = !player_dino.dino.ok
+			if player_dino.dino.ok:
+				players_ready += 1
+			else:
+				players_ready -= 1
+			if players_ready == player_dinos.size():
+				$Timer.start()
+			else:
+				$Timer.stop()

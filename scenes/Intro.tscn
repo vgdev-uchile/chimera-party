@@ -176,3 +176,6 @@ custom_fonts/font = SubResource( 7 )
 text = "Grupo 2"
 align = 1
 clip_text = true
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
