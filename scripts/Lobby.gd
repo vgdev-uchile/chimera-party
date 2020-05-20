@@ -7,8 +7,6 @@ var players_ready = 0
 enum State { WAITING, COUNT_DOWN, GO}
 var current_state = State.WAITING
 
-var test2d = preload("res://scenes/Config.tscn")
-
 onready var player_selection = $Panel/PlayerSelection
 
 func _ready():
@@ -17,7 +15,6 @@ func _ready():
 		player_selection.get_child(i).connect("leave", self, "release_slot")
 		player_selection.get_child(i).connect("player_ready", self, "on_player_ready")
 		Party._add_player()
-	print(test2d.instance().description, "meh")
 		
 
 func _process(delta):
@@ -33,9 +30,9 @@ func _process(delta):
 				pass
 		State.GO:
 			for ps in player_selection.get_children():
-				ps.set_process_input(false)
+				ps.go()
 				set_process(false)
-				Party._start()
+			Party._next()
 
 func action_add_key(action, player_index: int, key):
 	var ike: InputEventKey

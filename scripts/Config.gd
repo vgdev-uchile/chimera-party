@@ -1,14 +1,13 @@
-tool
-
-extends Node
+extends Resource
+class_name Config
 
 export var display_name: String
-export var description: String
+export(String, MULTILINE) var description
 
 enum GameType {
 	ALL_FOR_ALL,
 	ONE_VS_TWO,
-	ONE_VS_TREE,
+	ONE_VS_THREE,
 	TWO_VS_TWO
 }
 

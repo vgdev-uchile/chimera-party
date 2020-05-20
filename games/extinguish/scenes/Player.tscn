@@ -5,7 +5,6 @@
 [ext_resource path="res://games/extinguish/scripts/Player.gd" type="Script" id=3]
 
 [sub_resource type="PhysicsMaterial" id=1]
-rough = true
 bounce = 1.0
 
 [sub_resource type="Shader" id=2]
@@ -178,7 +177,7 @@ texture = ExtResource( 1 )
 material = SubResource( 3 )
 texture = ExtResource( 2 )
 hframes = 24
-frame = 3
+frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 4 )

@@ -1,9 +1,8 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scenes/PlayerSelection.tscn" type="PackedScene" id=1]
 [ext_resource path="res://fonts/m6x11.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://scripts/Lobby.gd" type="Script" id=3]
-[ext_resource path="res://scenes/Config.tscn" type="PackedScene" id=4]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.137255, 0.12549, 0.12549, 1 )
@@ -140,35 +139,3 @@ anims/count_down = SubResource( 3 )
 anims/go = SubResource( 4 )
 anims/waiting = SubResource( 5 )
 next/count_down = "go"
-
-[node name="Config" parent="." instance=ExtResource( 4 )]
-display_name = ""
-description = ""
-game_types = 0
-control_group = false
-cg_name_0 = ""
-cg_name_1 = ""
-dir_group_0 = 0
-dir_desc_0 = ""
-dir_group_1 = 0
-dir_desc_1 = ""
-dir_group_2 = 0
-dir_desc_2 = ""
-dir_group_3 = 0
-dir_desc_3 = ""
-dir_group_4 = 0
-dir_desc_4 = ""
-dir_group_5 = 0
-dir_desc_5 = ""
-dir_group_6 = 0
-dir_desc_6 = ""
-dir_group_7 = 0
-dir_desc_7 = ""
-act_group_0 = 0
-act_desc_0 = ""
-act_group_1 = 0
-act_desc_1 = ""
-act_group_2 = 0
-act_desc_2 = ""
-act_group_3 = 0
-act_desc_3 = ""

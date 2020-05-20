@@ -404,43 +404,43 @@ switch_mode = 2
 advance_condition = "available_0"
 priority = 0
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=19]
+[sub_resource type="AnimationNodeStateMachineTransition" id=16]
 switch_mode = 2
 advance_condition = "available_2"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=20]
+[sub_resource type="AnimationNodeStateMachineTransition" id=17]
 switch_mode = 2
 advance_condition = "available_3"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=21]
+[sub_resource type="AnimationNodeStateMachineTransition" id=18]
 switch_mode = 2
 advance_condition = "available_3"
 priority = 2
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=22]
+[sub_resource type="AnimationNodeStateMachineTransition" id=19]
 switch_mode = 2
 advance_condition = "available_0"
+priority = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=20]
+switch_mode = 2
+advance_condition = "available_1"
+priority = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=21]
+switch_mode = 2
+advance_condition = "available_0"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=22]
+switch_mode = 2
+advance_condition = "available_2"
 priority = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=23]
 switch_mode = 2
 advance_condition = "available_1"
-priority = 2
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=24]
-switch_mode = 2
-advance_condition = "available_0"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=25]
-switch_mode = 2
-advance_condition = "available_2"
-priority = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=26]
-switch_mode = 2
-advance_condition = "available_1"
-
-[sub_resource type="AnimationNodeStateMachine" id=16]
+[sub_resource type="AnimationNodeStateMachine" id=24]
 states/0/node = SubResource( 8 )
 states/0/position = Vector2( 467, 118 )
 states/1/node = SubResource( 9 )
@@ -449,49 +449,49 @@ states/2/node = SubResource( 10 )
 states/2/position = Vector2( 790, 118 )
 states/3/node = SubResource( 11 )
 states/3/position = Vector2( 627, 209 )
-transitions = [ "0", "1", SubResource( 12 ), "1", "2", SubResource( 13 ), "2", "3", SubResource( 14 ), "3", "0", SubResource( 15 ), "0", "2", SubResource( 19 ), "1", "3", SubResource( 20 ), "0", "3", SubResource( 21 ), "1", "0", SubResource( 22 ), "2", "1", SubResource( 23 ), "2", "0", SubResource( 24 ), "3", "2", SubResource( 25 ), "3", "1", SubResource( 26 ) ]
+transitions = [ "0", "1", SubResource( 12 ), "1", "2", SubResource( 13 ), "2", "3", SubResource( 14 ), "3", "0", SubResource( 15 ), "0", "2", SubResource( 16 ), "1", "3", SubResource( 17 ), "0", "3", SubResource( 18 ), "1", "0", SubResource( 19 ), "2", "1", SubResource( 20 ), "2", "0", SubResource( 21 ), "3", "2", SubResource( 22 ), "3", "1", SubResource( 23 ) ]
 start_node = "0"
 
-[sub_resource type="AnimationNodeBlendTree" id=17]
+[sub_resource type="AnimationNodeBlendTree" id=25]
 graph_offset = Vector2( -433, 135 )
 nodes/Add2/node = SubResource( 6 )
 nodes/Add2/position = Vector2( 180, 220 )
 nodes/Animation/node = SubResource( 7 )
 nodes/Animation/position = Vector2( 0, 320 )
-nodes/loop/node = SubResource( 16 )
+nodes/loop/node = SubResource( 24 )
 nodes/loop/position = Vector2( -20, 160 )
 node_connections = [ "output", 0, "Add2", "Add2", 0, "loop", "Add2", 1, "Animation" ]
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=18]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=26]
 
 [node name="Keyset" type="Node2D"]
 script = ExtResource( 25 )
 
 [node name="key_up" type="Sprite" parent="."]
 position = Vector2( 0, 14 )
-texture = ExtResource( 11 )
+texture = ExtResource( 24 )
 
 [node name="key_left" type="Sprite" parent="."]
 position = Vector2( -26, 40 )
-texture = ExtResource( 8 )
+texture = ExtResource( 21 )
 
 [node name="key_down" type="Sprite" parent="."]
 position = Vector2( 0, 40 )
-texture = ExtResource( 7 )
+texture = ExtResource( 19 )
 
 [node name="key_right" type="Sprite" parent="."]
 position = Vector2( 26, 40 )
-texture = ExtResource( 10 )
+texture = ExtResource( 22 )
 
 [node name="key_a" type="Sprite" parent="."]
 modulate = Color( 0, 0, 1, 1 )
 position = Vector2( -27, 12 )
-texture = ExtResource( 9 )
+texture = ExtResource( 13 )
 
 [node name="key_b" type="Sprite" parent="."]
 modulate = Color( 1, 0, 0, 1 )
 position = Vector2( 27, 12 )
-texture = ExtResource( 12 )
+texture = ExtResource( 14 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/0 = SubResource( 1 )
@@ -501,11 +501,11 @@ anims/3 = SubResource( 4 )
 anims/idle = SubResource( 5 )
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource( 17 )
+tree_root = SubResource( 25 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
 parameters/Add2/add_amount = 1.0
-parameters/loop/playback = SubResource( 18 )
+parameters/loop/playback = SubResource( 26 )
 parameters/loop/conditions/available_0 = true
 parameters/loop/conditions/available_1 = true
 parameters/loop/conditions/available_2 = true

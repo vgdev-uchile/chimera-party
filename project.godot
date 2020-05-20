@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Resource",
+"class": "Config",
+"language": "GDScript",
+"path": "res://scripts/Config.gd"
+}, {
 "base": "Spatial",
 "class": "Main",
 "language": "GDScript",
@@ -20,6 +25,7 @@ _global_script_classes=[ {
 "path": "res://scripts/PlayerButton.gd"
 } ]
 _global_script_class_icons={
+"Config": "",
 "Main": "",
 "PlayerButton": ""
 }
@@ -39,8 +45,8 @@ Party="*res://scripts/Party.gd"
 
 window/size/width=1920
 window/size/height=1080
-window/size/resizable=false
-window/size/borderless=true
+window/size/test_width=1280
+window/size/test_height=720
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"
 

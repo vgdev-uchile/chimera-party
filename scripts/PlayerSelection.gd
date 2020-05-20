@@ -15,10 +15,14 @@ func get_keyset_index():
 
 func init(keyset_index: int, player_index: int):
 	
+	
+	 
 	if focused:
 		focused.focus(false)
 	_player_index = player_index
 	_keyset_index = keyset_index
+	_player_color = $ColorSelect.options.size() - 1
+	Party._players[_player_index].color = _player_color	
 	$Panel/Keyset.set_keyset(str(keyset_index))
 	$Color.focus(true)
 	focused = $Color
@@ -35,8 +39,8 @@ func reset():
 	focused = null
 	_keyset_index = -1
 	_player_index = -1
-	$ColorSelect.current_option = $ColorSelect.options.size() - 1
 	on_ColorSelect_selected($ColorSelect.options.size() - 1)
+	_player_color = -1
 	
 
 
@@ -47,6 +51,7 @@ func _ready():
 	$Ready.connect("pressed", self, "on_Ready_pressed")
 	$ColorSelect.connect("selected", self, "on_ColorSelect_selected")
 	$ColorSelect.current_option = $ColorSelect.options.size() - 1
+	_player_color = -1
 	
 func on_Leave_pressed():
 	if _player_ready:
@@ -90,8 +95,12 @@ func on_ColorSelect_selected(option):
 	for i in range($ColorSelect.options.size()):
 		$Panel/Avatars.get_child(i).visible = i == _player_color
 
-func _process(delta):
-	pass
+func go():
+	randomize()
+	if _player_color == $ColorSelect.options.size() - 1:
+		var colors = Party._get_available_colors()
+		Party._players[_player_index].color = colors[randi() % colors.size()]
+	set_process_input(false)
 	
 
 

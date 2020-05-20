@@ -7,4 +7,4 @@ func _ready():
 
 
 func on_new_game():
-	Party._go_to_lobby()
+	Party._next()

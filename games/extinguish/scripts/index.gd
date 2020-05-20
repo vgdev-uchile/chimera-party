@@ -11,6 +11,9 @@ var points = [0, 0, 0, 0]
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	
+#	Party.load_test()
+#	players = Party.get_players()
 	for i in range(players.size()):
 		if players[i].color != -1:
 			var player_inst = Player.instance()

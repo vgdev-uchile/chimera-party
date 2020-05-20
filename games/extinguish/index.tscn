@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://fonts/Squada_One/SquadaOne-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://fonts/Fjalla_One/FjallaOne-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://games/extinguish/scripts/index.gd" type="Script" id=2]
 [ext_resource path="res://games/extinguish/sprites/tf_ashlands/ashlands_tileset.png" type="Texture" id=3]
 [ext_resource path="res://games/extinguish/sprites/tf_ashlands/lava.tres" type="Texture" id=4]
@@ -227,6 +227,8 @@ __meta__ = {
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.5
+one_shot = true
 
 [node name="Timer2" type="Timer" parent="."]
 wait_time = 2.5
+one_shot = true

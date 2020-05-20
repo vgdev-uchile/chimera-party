@@ -272,6 +272,7 @@ visible = false
 position = Vector2( 48, 35.9999 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 14 )
+frame = 5
 playing = true
 
 [node name="Yellow" type="AnimatedSprite" parent="Panel/Avatars"]
@@ -279,6 +280,7 @@ visible = false
 position = Vector2( 48, 35.9999 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 21 )
+frame = 5
 playing = true
 
 [node name="Blue" type="AnimatedSprite" parent="Panel/Avatars"]
@@ -286,7 +288,6 @@ visible = false
 position = Vector2( 48, 35.9999 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 28 )
-frame = 1
 playing = true
 
 [node name="Random" type="AnimatedSprite" parent="Panel/Avatars"]
@@ -294,7 +295,7 @@ modulate = Color( 0, 0, 0, 1 )
 position = Vector2( 48, 35.9999 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 53 )
-frame = 11
+frame = 22
 playing = true
 
 [node name="Color" parent="." instance=ExtResource( 3 )]
