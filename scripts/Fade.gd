@@ -9,6 +9,7 @@ func _ready():
 
 # Show screen
 func fade_in():
+	
 	$Tween.interpolate_property(self, "color:a", 1.0, 0.0, duration, Tween.TRANS_QUART, Tween.EASE_OUT)
 	$Tween.start()
 

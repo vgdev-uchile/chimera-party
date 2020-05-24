@@ -1,10 +1,11 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://fonts/Fjalla_One/FjallaOne-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://games/sliding_castle/fonts/Fjalla_One/FjallaOne-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://games/extinguish/scripts/index.gd" type="Script" id=2]
 [ext_resource path="res://games/extinguish/sprites/tf_ashlands/ashlands_tileset.png" type="Texture" id=3]
 [ext_resource path="res://games/extinguish/sprites/tf_ashlands/lava.tres" type="Texture" id=4]
 [ext_resource path="res://games/extinguish/sprites/tf_ashlands/ice.png" type="Texture" id=5]
+
 
 [sub_resource type="TileSet" id=1]
 2/name = "lava.tres 2"
@@ -91,7 +92,7 @@
 5/shapes = [  ]
 5/z_index = 0
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=9]
 size = 128
 outline_size = 8
 outline_color = Color( 0, 0, 0, 1 )
@@ -163,7 +164,7 @@ margin_left = 481.0
 margin_top = 239.0
 margin_right = -1003.0
 margin_bottom = 639.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 9 )
 text = "P1 100"
 valign = 1
 __meta__ = {
@@ -177,7 +178,7 @@ margin_left = 1121.0
 margin_top = 239.0
 margin_right = -363.0
 margin_bottom = 639.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 9 )
 text = "P1 100"
 valign = 1
 __meta__ = {
@@ -191,7 +192,7 @@ margin_left = 481.0
 margin_top = 495.0
 margin_right = -1003.0
 margin_bottom = 895.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 9 )
 text = "P1 100"
 valign = 1
 __meta__ = {
@@ -205,7 +206,7 @@ margin_left = 1121.0
 margin_top = 495.0
 margin_right = -363.0
 margin_bottom = 895.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 9 )
 text = "P1 100"
 valign = 1
 __meta__ = {
@@ -217,7 +218,7 @@ visible = false
 anchor_right = 1.0
 margin_right = 0.00012207
 margin_bottom = 400.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 9 )
 text = "Terminó"
 align = 1
 valign = 1

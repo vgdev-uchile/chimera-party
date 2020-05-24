@@ -6,7 +6,7 @@
 script = ExtResource( 1 )
 display_name = "Empuja3"
 description = "Empuja a los demás a la lava para ganar!"
-game_types = 15
+game_types = 1
 control_group = false
 cg_name_0 = ""
 cg_name_1 = ""

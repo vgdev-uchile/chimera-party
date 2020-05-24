@@ -1,0 +1,103 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://games/sliding_castle/models/Tower Defense Kit (1.0)/Models/Tokens/Tiles/tile_tree.tscn" type="PackedScene" id=1]
+[ext_resource path="res://games/sliding_castle/scripts/Player.gd" type="Script" id=2]
+[ext_resource path="res://games/sliding_castle/models/Tower Defense Kit (1.0)/Models/Tokens/Tiles/tile.tscn" type="PackedScene" id=3]
+[ext_resource path="res://games/sliding_castle/models/Tower Defense Kit (1.0)/Models/Tokens/Tiles/tile_treeQuad.tscn" type="PackedScene" id=4]
+[ext_resource path="res://games/sliding_castle/models/Tower Defense Kit (1.0)/Models/Tokens/Towers/towerSquare_sampleB.tscn" type="PackedScene" id=5]
+[ext_resource path="res://games/sliding_castle/models/Tower Defense Kit (1.0)/Models/Tokens/Paths/ends/tile_end.tscn" type="PackedScene" id=6]
+[ext_resource path="res://games/sliding_castle/models/Tower Defense Kit (1.0)/Models/Tokens/Towers/towerRound_sampleB.tscn" type="PackedScene" id=7]
+[ext_resource path="res://games/sliding_castle/models/Tower Defense Kit (1.0)/Models/Tokens/Towers/towerSquare_sampleF.tscn" type="PackedScene" id=8]
+[ext_resource path="res://games/sliding_castle/models/Tower Defense Kit (1.0)/Models/Tokens/Tiles/tile_treeDouble.tscn" type="PackedScene" id=9]
+[ext_resource path="res://games/sliding_castle/models/Tower Defense Kit (1.0)/Models/Tokens/Tiles/tile_crystal.tscn" type="PackedScene" id=10]
+[ext_resource path="res://games/sliding_castle/models/Tower Defense Kit (1.0)/Models/Tokens/Paths/corners/tile_cornerRound.tscn" type="PackedScene" id=11]
+[ext_resource path="res://games/sliding_castle/models/Tower Defense Kit (1.0)/Models/Tokens/Tiles/tile_rock.tscn" type="PackedScene" id=12]
+[ext_resource path="res://games/sliding_castle/models/Tower Defense Kit (1.0)/Models/Tokens/Paths/straights/tile_straight.tscn" type="PackedScene" id=13]
+[ext_resource path="res://games/sliding_castle/models/Tower Defense Kit (1.0)/Models/Tokens/Towers/towerRound_sampleE.tscn" type="PackedScene" id=14]
+[ext_resource path="res://games/sliding_castle/models/Tower Defense Kit (1.0)/Models/Tokens/Paths/straights/tile_bump.tscn" type="PackedScene" id=15]
+
+[node name="Player" type="Spatial"]
+script = ExtResource( 2 )
+
+[node name="Board" type="Spatial" parent="."]
+
+[node name="Tokens" type="Spatial" parent="."]
+
+[node name="Sample" type="Spatial" parent="."]
+visible = false
+
+[node name="0" type="Spatial" parent="Sample"]
+
+[node name="tile" parent="Sample/0" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, -1.5 )
+
+[node name="towerSquare_sampleF2" parent="Sample/0/tile" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0 )
+
+[node name="tile2" parent="Sample/0" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, -1.5 )
+
+[node name="towerSquare_sampleB2" parent="Sample/0/tile2" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0 )
+
+[node name="tile_treeDouble2" parent="Sample/0" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -1.5 )
+
+[node name="tile_treeQuad2" parent="Sample/0" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, -1.5 )
+
+[node name="1" type="Spatial" parent="Sample"]
+
+[node name="tile3" parent="Sample/1" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, -0.5 )
+
+[node name="towerRound_sampleE2" parent="Sample/1/tile3" instance=ExtResource( 14 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0 )
+
+[node name="tile_crystal2" parent="Sample/1" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, -0.5 )
+
+[node name="tile4" parent="Sample/1" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -0.5 )
+
+[node name="tile_tree2" parent="Sample/1" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, -0.5 )
+
+[node name="2" type="Spatial" parent="Sample"]
+
+[node name="tile2" parent="Sample/2" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 0.5 )
+
+[node name="towerRound_sampleB2" parent="Sample/2/tile2" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.19209e-07, 0.2, 0 )
+
+[node name="tile_rock2" parent="Sample/2" instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 0.5 )
+
+[node name="tile_cornerRound2" parent="Sample/2" instance=ExtResource( 11 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.5, 0, 0.5 )
+
+[node name="tile_bump2" parent="Sample/2" instance=ExtResource( 15 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.5, 0, 0.5 )
+
+[node name="3" type="Spatial" parent="Sample"]
+
+[node name="tile_end2" parent="Sample/3" instance=ExtResource( 6 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.5, 0, 1.5 )
+
+[node name="tile_straight2" parent="Sample/3" instance=ExtResource( 13 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.5, 0, 1.5 )
+
+[node name="tile_cornerRound2" parent="Sample/3" instance=ExtResource( 11 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.5, 0, 1.5 )
+
+[node name="Cursor" type="Spatial" parent="Sample/3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 1.5 )
+
+[node name="Tween" type="Tween" parent="Sample/3/Cursor"]
+
+[node name="Dummy" type="Spatial" parent="Sample"]
+transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, 0, 0, 0 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.05

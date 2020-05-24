@@ -14,8 +14,11 @@ var game_type = GameType.ALL_FOR_ALL
 #var groups = [[0,1],[2,3]]
 var groups = [[0, 1, 2, 3]]
 
+#var rounds = 2
 var rounds = 10
 var current_round = 1
+
+var _new_game = true
 
 onready var Main = get_tree().get_root().get_node("Main") as Main
 var _current_game = ""

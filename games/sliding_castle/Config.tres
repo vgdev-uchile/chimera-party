@@ -1,0 +1,36 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://scripts/Config.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+display_name = "Caminos y castillos"
+description = "Completa la figura central antes que los demás!"
+game_types = 1
+control_group = false
+cg_name_0 = ""
+cg_name_1 = ""
+dir_group_0 = 15
+dir_desc_0 = "Mover piezas"
+dir_group_1 = 0
+dir_desc_1 = ""
+dir_group_2 = 0
+dir_desc_2 = ""
+dir_group_3 = 0
+dir_desc_3 = ""
+dir_group_4 = 0
+dir_desc_4 = ""
+dir_group_5 = 0
+dir_desc_5 = ""
+dir_group_6 = 0
+dir_desc_6 = ""
+dir_group_7 = 0
+dir_desc_7 = ""
+act_group_0 = 0
+act_desc_0 = ""
+act_group_1 = 0
+act_desc_1 = ""
+act_group_2 = 0
+act_desc_2 = ""
+act_group_3 = 0
+act_desc_3 = ""

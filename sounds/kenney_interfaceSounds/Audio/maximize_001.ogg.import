@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/maximize_001.ogg-e48a4f26b9f8d6ff0328899ed587ab1b.oggstr"
+
+[deps]
+
+source_file="res://sounds/kenney_interfaceSounds/Audio/maximize_001.ogg"
+dest_files=[ "res://.import/maximize_001.ogg-e48a4f26b9f8d6ff0328899ed587ab1b.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

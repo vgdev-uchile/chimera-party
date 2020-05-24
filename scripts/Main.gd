@@ -43,6 +43,7 @@ func load_world(scene_to_load: String):
 	
 	
 func start_game():
+	Party._new_game = true
 	Party.current_round = 1
 	set_game_state(GameState.MENU)
 	load_games()
@@ -105,6 +106,9 @@ func filter_games():
 
 func choose_random_game():
 	randomize()
+#	Party._current_game = games[1].game
+#	Party._make_groups()
+	print("choose random")
 	var target_weight = randf()
 	var weight_sum = 0
 	var new_game_index = -1
@@ -128,6 +132,7 @@ func choose_random_game():
 
 
 func on_finished_fading():
+	$ColorRect.visible = false
 	match loading_state:
 		LoadingStates.FADE_TO_BLACK_1:
 			$World.visible = false
@@ -159,6 +164,11 @@ func _process(delta):
 			var new_world = ResourceQueue.get_resource(loading_world)
 			current_world = new_world.instance()
 			loading_state = LoadingStates.FADE_TO_BLACK_2
+			if game_state == GameState.INTRO:
+				if Party._new_game:
+					Party._new_game = false
+					filter_games()
+				choose_random_game()
 			fade.fade_out()
 			set_process(false)
 
@@ -183,8 +193,6 @@ func set_game_state(new_state):
 		GameState.LOBBY:
 			load_world("res://scenes/Lobby.tscn")
 		GameState.INTRO:
-			filter_games()
-			choose_random_game()
 			load_world("res://scenes/Intro.tscn")
 		GameState.GAME:
 			load_world("res://games/"+ Party._current_game + "/index.tscn")
