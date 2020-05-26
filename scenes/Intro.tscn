@@ -23,7 +23,7 @@ use_mipmaps = true
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=5]
-size = 48
+size = 40
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=6]
@@ -128,7 +128,7 @@ __meta__ = {
 margin_left = 128.0
 margin_top = 848.0
 margin_right = 1248.0
-margin_bottom = 1065.0
+margin_bottom = 1080.0
 custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0.227451, 0.207843, 0.207843, 1 )
 text = "Descripción"
@@ -136,7 +136,6 @@ align = 1
 valign = 1
 autowrap = true
 __meta__ = {
-"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 

@@ -1,0 +1,13 @@
+[remap]
+
+importer="image"
+type="Image"
+path="res://.import/Background.png-b5a034235751b01f05904e211ab6a325.image"
+
+[deps]
+
+source_file="res://games/takeone/game_assets/Misc/Background.png"
+dest_files=[ "res://.import/Background.png-b5a034235751b01f05904e211ab6a325.image" ]
+
+[params]
+

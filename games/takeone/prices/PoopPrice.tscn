@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://games/takeone/game_assets/Prices/Poop.png" type="Texture" id=1]
+[ext_resource path="res://games/takeone/prices/Price.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 41.1611, 16.2582 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 22.7147, 11.7784 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 10, 7.29855 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 3.21425, 5.45392 )
+
+[node name="RigidBody2D" type="RigidBody2D"]
+collision_layer = 6
+collision_mask = 2
+gravity_scale = 5.0
+angular_damp = 0.0
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0, -18.183 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 7.90561 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -19.5005 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -37.9469 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
+position = Vector2( 3.9528, -50.8594 )
+shape = SubResource( 4 )

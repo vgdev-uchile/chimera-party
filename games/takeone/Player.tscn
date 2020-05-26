@@ -1,0 +1,62 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://games/takeone/game_assets/Basket/basket.png" type="Texture" id=1]
+[ext_resource path="res://games/takeone/Player.gd" type="Script" id=2]
+
+[sub_resource type="AnimatedTexture" id=1]
+frame_0/texture = ExtResource( 1 )
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 2.29316
+height = 47.9136
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 49, 2.334 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 2.65919, 29.5904 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 37.9995, 24.916 )
+
+[node name="Player" type="KinematicBody2D"]
+collision_mask = 17
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 4, 4 )
+texture = SubResource( 1 )
+
+[node name="LeftCollisionBar" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( -46.5, 18 )
+shape = SubResource( 2 )
+
+[node name="RightCollisionBar" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( 46.5, 18 )
+shape = SubResource( 2 )
+
+[node name="ItemCollisionShapes" type="KinematicBody2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+
+[node name="Bottom" type="CollisionShape2D" parent="ItemCollisionShapes"]
+position = Vector2( 0, 54 )
+shape = SubResource( 3 )
+
+[node name="Left" type="CollisionShape2D" parent="ItemCollisionShapes"]
+position = Vector2( -46, 22 )
+shape = SubResource( 4 )
+
+[node name="Right" type="CollisionShape2D" parent="ItemCollisionShapes"]
+position = Vector2( 46, 22 )
+shape = SubResource( 4 )
+
+[node name="CatchedObjectCollision" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CatchedObjectCollision"]
+position = Vector2( 0, 22.2027 )
+shape = SubResource( 5 )
