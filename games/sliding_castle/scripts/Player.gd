@@ -71,6 +71,8 @@ func set_board_size(new_value):
 	generate_tokens()
 	
 func _ready():
+	randomize()
+	tile_type = randi() % tile_types
 	update_board()
 	if is_master:
 		load_tokens()
@@ -541,7 +543,7 @@ func generate_shuffle_array():
 	var shuffle_array = []
 	var cursor = Vector2(board_size - 1, board_size - 1)
 	
-	var move_count = pow(board_size, 3)
+	var move_count = pow(board_size + 1, 2)
 #	var move_count = 3
 	var last_move = Vector2.ZERO
 	

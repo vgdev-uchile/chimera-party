@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/light_off.wav-7bd487893db198967572c63f2892faf5.sample"
+
+[deps]
+
+source_file="res://games/MothFight/Sound/light_off.wav"
+dest_files=[ "res://.import/light_off.wav-7bd487893db198967572c63f2892faf5.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
