@@ -106,7 +106,7 @@ func filter_games():
 
 func choose_random_game():
 	randomize()
-#	Party._current_game = games[2].game
+#	Party._current_game = games[1].game
 #	Party._make_groups()
 	print("choose random")
 	var target_weight = randf()
