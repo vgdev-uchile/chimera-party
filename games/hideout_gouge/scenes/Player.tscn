@@ -1,0 +1,215 @@
+[gd_scene load_steps=23 format=2]
+
+[ext_resource path="res://games/hideout_gouge/assets/crate/crate_1.png" type="Texture" id=1]
+[ext_resource path="res://games/hideout_gouge/assets/sfx/dead.wav" type="AudioStream" id=2]
+[ext_resource path="res://games/hideout_gouge/assets/crate/crate_2.png" type="Texture" id=3]
+[ext_resource path="res://games/hideout_gouge/assets/crate/crate_0.png" type="Texture" id=4]
+[ext_resource path="res://games/hideout_gouge/assets/sfx/soft_rock.wav" type="AudioStream" id=5]
+[ext_resource path="res://games/hideout_gouge/assets/sfx/hard_hit_plank.wav" type="AudioStream" id=6]
+[ext_resource path="res://games/hideout_gouge/assets/sfx/soft_wood.wav" type="AudioStream" id=7]
+[ext_resource path="res://games/hideout_gouge/scripts/Player.gd" type="Script" id=8]
+[ext_resource path="res://games/hideout_gouge/scripts/plank.gd" type="Script" id=9]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 25, 28 )
+
+[sub_resource type="Animation" id=2]
+tracks/0/type = "value"
+tracks/0/path = NodePath("CollisionShape2D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.4 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 34.9946, 11.5819 )
+
+[sub_resource type="Animation" id=4]
+tracks/0/type = "value"
+tracks/0/path = NodePath("CollisionShape2D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ true, false, true ]
+}
+
+[sub_resource type="AtlasTexture" id=5]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 512, 512 )
+
+[sub_resource type="AtlasTexture" id=6]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 512, 512 )
+
+[sub_resource type="AtlasTexture" id=7]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 512, 512 )
+
+[sub_resource type="SpriteFrames" id=8]
+animations = [ {
+"frames": [ SubResource( 5 ) ],
+"loop": false,
+"name": "damage_2",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 6 ) ],
+"loop": false,
+"name": "damage_0",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 7 ) ],
+"loop": false,
+"name": "damage_1",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 36, 36 )
+
+[sub_resource type="Animation" id=10]
+tracks/0/type = "value"
+tracks/0/path = NodePath("collider:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("collider:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=11]
+tracks/0/type = "value"
+tracks/0/path = NodePath("collider:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=12]
+resource_name = "buildUpX"
+tracks/0/type = "value"
+tracks/0/path = NodePath("collider:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=13]
+tracks/0/type = "value"
+tracks/0/path = NodePath("collider:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[node name="Player" type="KinematicBody2D" groups=[
+"Entities",
+]]
+collision_layer = 1025
+collision_mask = 1025
+script = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="anim" type="AnimationPlayer" parent="."]
+anims/death = SubResource( 2 )
+
+[node name="pickaxe" type="Area2D" parent="."]
+z_index = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pickaxe"]
+position = Vector2( 35, 0 )
+z_index = 1
+shape = SubResource( 3 )
+disabled = true
+
+[node name="anim" type="AnimationPlayer" parent="pickaxe"]
+anims/swing = SubResource( 4 )
+
+[node name="plank" type="KinematicBody2D" parent="." groups=[
+"Entities",
+]]
+collision_layer = 1024
+collision_mask = 1025
+script = ExtResource( 9 )
+
+[node name="anim_sprite" type="AnimatedSprite" parent="plank"]
+visible = false
+position = Vector2( 1.629, -0.814487 )
+scale = Vector2( 0.13777, 0.13777 )
+frames = SubResource( 8 )
+animation = "damage_0"
+
+[node name="collider" type="CollisionShape2D" parent="plank"]
+position = Vector2( 0.662834, -0.994606 )
+shape = SubResource( 9 )
+disabled = true
+
+[node name="anim" type="AnimationPlayer" parent="plank"]
+anims/build = SubResource( 10 )
+anims/buildUp = SubResource( 11 )
+anims/buildUpX = SubResource( 12 )
+anims/death = SubResource( 13 )
+
+[node name="destroyed" type="AudioStreamPlayer2D" parent="plank"]
+stream = ExtResource( 6 )
+volume_db = 1.0
+pitch_scale = 0.8
+
+[node name="soft_hit" type="AudioStreamPlayer2D" parent="plank"]
+stream = ExtResource( 7 )
+
+[node name="audio_dead" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 2 )
+
+[node name="soft_rock_hit" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 5 )
+[connection signal="animation_finished" from="anim" to="." method="_on_anim_animation_finished"]

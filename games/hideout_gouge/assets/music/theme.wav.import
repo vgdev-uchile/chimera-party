@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/theme.wav-8a1bdae79be3cb4d0cf33076fcf021cc.sample"
+
+[deps]
+
+source_file="res://games/hideout_gouge/assets/music/theme.wav"
+dest_files=[ "res://.import/theme.wav-8a1bdae79be3cb4d0cf33076fcf021cc.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/fire.wav-107af7ea66c81911a27e87f61cee5dc8.sample"
+
+[deps]
+
+source_file="res://games/hideout_gouge/assets/sfx/fire.wav"
+dest_files=[ "res://.import/fire.wav-107af7ea66c81911a27e87f61cee5dc8.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
