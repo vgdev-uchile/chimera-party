@@ -49,6 +49,7 @@ func start_game():
 	load_games()
 
 func _ready():
+	randomize()
 	fade.connect("finished_fading", self, "on_finished_fading")
 	ResourceQueue.start()
 	
@@ -108,15 +109,16 @@ func choose_random_game():
 	randomize()
 #	Party._current_game = games[1].game
 #	Party._make_groups()
-	print("choose random")
-	var target_weight = randf()
-	var weight_sum = 0
-	var new_game_index = -1
-	for i in range(game_weights.size()):
-		weight_sum += game_weights[i]
-		if target_weight < weight_sum:
-			new_game_index = i
-			break
+#	print("choose random")
+#	var target_weight = randf()
+#	var weight_sum = 0
+#	var new_game_index = -1
+#	for i in range(game_weights.size()):
+#		weight_sum += game_weights[i]
+#		if target_weight < weight_sum:
+#			new_game_index = i
+#			break
+	var new_game_index = randi() % games.size()
 	if new_game_index != -1:
 		Party._current_game = games[new_game_index].game
 		Party.game_type = games[new_game_index].type

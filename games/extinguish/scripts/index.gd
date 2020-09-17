@@ -5,7 +5,8 @@ var Player = preload("res://games/extinguish/scenes/Player.tscn")
 
 onready var Players = $Players
 
-var players = Party.get_players()
+#var players = Party.get_players()
+var players
 var players_alive = []
 var points = [0, 0, 0, 0]
 
@@ -13,7 +14,7 @@ var points = [0, 0, 0, 0]
 func _ready():
 	
 #	Party.load_test()
-#	players = Party.get_players()
+	players = Party.get_players()
 	for i in range(players.size()):
 		if players[i].color != -1:
 			var player_inst = Player.instance()
@@ -52,15 +53,6 @@ func end_game():
 func on_body_exited(body: Node):
 	if body.is_in_group("Player"):
 		body.death()
-
-func _physics_process(delta):
-	var players = Players.get_children()
-	players.sort_custom(self, "sort_by_y")
-	for i in range(players.size()):
-		players[i].z_index = i
-
-func sort_by_y(a, b):
-	return a.position.y < b.position.y
 
 func on_player_died(player):
 	points[player.player_index] = get_points(players_alive.size())

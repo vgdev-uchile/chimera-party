@@ -6,7 +6,6 @@
 [ext_resource path="res://games/extinguish/sprites/tf_ashlands/lava.tres" type="Texture" id=4]
 [ext_resource path="res://games/extinguish/sprites/tf_ashlands/ice.png" type="Texture" id=5]
 
-
 [sub_resource type="TileSet" id=1]
 2/name = "lava.tres 2"
 2/texture = ExtResource( 4 )
@@ -92,7 +91,7 @@
 5/shapes = [  ]
 5/z_index = 0
 
-[sub_resource type="DynamicFont" id=9]
+[sub_resource type="DynamicFont" id=2]
 size = 128
 outline_size = 8
 outline_color = Color( 0, 0, 0, 1 )
@@ -115,7 +114,7 @@ visible = false
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
 polygon = PoolVector2Array( 232, 644, 232, 444, 252, 428, 280, 428, 296, 412, 296, 316, 312, 300, 344, 300, 360, 284, 360, 252, 376, 236, 472, 236, 488, 220, 488, 188, 504, 172, 1416, 172, 1432, 188, 1432, 220, 1448, 236, 1544, 236, 1560, 252, 1560, 284, 1576, 300, 1608, 300, 1624, 316, 1624, 412, 1640, 428, 1672, 428, 1688, 444, 1688, 648, 1672, 664, 1632, 664, 1624, 672, 1624, 776, 1608, 792, 1568.09, 792, 1560, 800.143, 1560, 840, 1544, 856, 1440, 856, 1432, 863.986, 1432, 904, 1416, 920, 512, 920, 488, 900, 488, 864, 480, 856, 384, 856, 360, 836, 360, 800, 352, 792, 320, 792, 296, 772, 296, 668, 288, 664, 256, 664 )
 
-[node name="Players" type="Node2D" parent="."]
+[node name="Players" type="YSort" parent="."]
 
 [node name="Positions" type="Node2D" parent="."]
 
@@ -164,7 +163,7 @@ margin_left = 481.0
 margin_top = 239.0
 margin_right = -1003.0
 margin_bottom = 639.0
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 2 )
 text = "P1 100"
 valign = 1
 __meta__ = {
@@ -178,7 +177,7 @@ margin_left = 1121.0
 margin_top = 239.0
 margin_right = -363.0
 margin_bottom = 639.0
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 2 )
 text = "P1 100"
 valign = 1
 __meta__ = {
@@ -192,7 +191,7 @@ margin_left = 481.0
 margin_top = 495.0
 margin_right = -1003.0
 margin_bottom = 895.0
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 2 )
 text = "P1 100"
 valign = 1
 __meta__ = {
@@ -206,7 +205,7 @@ margin_left = 1121.0
 margin_top = 495.0
 margin_right = -363.0
 margin_bottom = 895.0
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 2 )
 text = "P1 100"
 valign = 1
 __meta__ = {
@@ -218,7 +217,7 @@ visible = false
 anchor_right = 1.0
 margin_right = 0.00012207
 margin_bottom = 400.0
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 2 )
 text = "Terminó"
 align = 1
 valign = 1
