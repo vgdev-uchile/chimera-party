@@ -2,16 +2,11 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/TitleScreenDesign.png-c72f4e5de6b0905e8453b78d27a033d4.stex"
-metadata={
-"vram_texture": false
-}
+valid=false
 
 [deps]
 
 source_file="res://games/scrap_road/assets/TitleScreenDesign.png"
-dest_files=[ "res://.import/TitleScreenDesign.png-c72f4e5de6b0905e8453b78d27a033d4.stex" ]
-
 [params]
 
 compress/mode=0

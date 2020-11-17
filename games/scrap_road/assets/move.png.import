@@ -2,16 +2,11 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/move.png-2b913f39291abef6cb86079ec8396c24.stex"
-metadata={
-"vram_texture": false
-}
+valid=false
 
 [deps]
 
 source_file="res://games/scrap_road/assets/move.png"
-dest_files=[ "res://.import/move.png-2b913f39291abef6cb86079ec8396c24.stex" ]
-
 [params]
 
 compress/mode=0

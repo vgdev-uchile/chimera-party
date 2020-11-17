@@ -2,16 +2,11 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tick.png-5a2d11e03f96a06892e09f39bb6cc2ff.stex"
-metadata={
-"vram_texture": false
-}
+valid=false
 
 [deps]
 
 source_file="res://games/scrap_road/assets/tick.png"
-dest_files=[ "res://.import/tick.png-5a2d11e03f96a06892e09f39bb6cc2ff.stex" ]
-
 [params]
 
 compress/mode=0

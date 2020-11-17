@@ -2,16 +2,11 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Tutorial.png-5499c006cbe2eb5ef1ff96e64a3cdada.stex"
-metadata={
-"vram_texture": false
-}
+valid=false
 
 [deps]
 
 source_file="res://games/scrap_road/assets/Tutorial.png"
-dest_files=[ "res://.import/Tutorial.png-5499c006cbe2eb5ef1ff96e64a3cdada.stex" ]
-
 [params]
 
 compress/mode=0

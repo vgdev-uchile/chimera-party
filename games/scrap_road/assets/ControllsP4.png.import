@@ -2,16 +2,11 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ControllsP4.png-775970bf70efd0c6a9183c23fe196bf1.stex"
-metadata={
-"vram_texture": false
-}
+valid=false
 
 [deps]
 
 source_file="res://games/scrap_road/assets/ControllsP4.png"
-dest_files=[ "res://.import/ControllsP4.png-775970bf70efd0c6a9183c23fe196bf1.stex" ]
-
 [params]
 
 compress/mode=0
