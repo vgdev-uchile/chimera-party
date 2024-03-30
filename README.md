@@ -1,7 +1,7 @@
 # Chimera Party
 
-Party game made for VGDEV UCHILE, Game Develop community of University of Chile
+Party game made for **VGDEV UCHILE**, University of Chile's game develop community.
 
-Authors:\
-Elías Zelada\
-VGDEV UCHILE
+**Authors**:\
+*Elías Zelada*\
+*VGDEV UCHILE*
