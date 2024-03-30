@@ -14,7 +14,7 @@ func _ready() -> void:
 
 
 func _on_start_game_pressed():
-	Game.load_game("res://scenes/lobby.tscn")
+	Game.load_scene("res://scenes/lobby.tscn")
 
 
 func _on_options_pressed():

@@ -27,7 +27,7 @@ func _ready() -> void:
 			player_data.input = test_player.input
 			player_data.primary_color = test_player.color
 			Game.players.append(player_data)
-			Game.load_game(Game.test_game_path)
+		Game.load_random_game()
 
 
 func _exit_tree() -> void:
@@ -42,7 +42,7 @@ func _input(event: InputEvent) -> void:
 		get_tree().reload_current_scene()
 		Game.players = []
 	if Input.is_action_just_pressed("start"):
-		Game.load_game("res://scenes/test.tscn")
+		Game.load_random_game()
 	for i in 8:
 		var action = "check_player_%d" % i
 		if InputMap.has_action(action) && event.is_action_pressed(action):

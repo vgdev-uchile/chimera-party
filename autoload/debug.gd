@@ -5,7 +5,7 @@ extends Node
 @onready var container = VBoxContainer.new()
 
 func _ready() -> void:
-	if !OS.is_debug_build() && !Engine.is_editor_hint():
+	if !OS.is_debug_build():
 		return
 	add_child(canvas_layer)
 	canvas_layer.layer = 1000
@@ -13,7 +13,7 @@ func _ready() -> void:
 
 
 func log(message: Variant, seconds: int = 2) -> void:
-	if !OS.is_debug_build() && !Engine.is_editor_hint():
+	if !OS.is_debug_build():
 		return
 	
 	if multiplayer.multiplayer_peer is OfflineMultiplayerPeer:

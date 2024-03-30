@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cw3m5816h6deg"]
 
 [ext_resource type="Script" path="res://scenes/lobby.gd" id="1_1nrrg"]
-[ext_resource type="PackedScene" uid="uid://c87cowtynwm55" path="res://player/chimerin.tscn" id="2_gengn"]
+[ext_resource type="PackedScene" uid="uid://c87cowtynwm55" path="res://chimerin/chimerin.tscn" id="2_gengn"]
 [ext_resource type="TileSet" uid="uid://clb1dske3cig2" path="res://resources/lab_tile_set.tres" id="3_j0ywb"]
 [ext_resource type="PackedScene" uid="uid://dg7r13os1b60i" path="res://scenes/color_base.tscn" id="4_7fuap"]
 

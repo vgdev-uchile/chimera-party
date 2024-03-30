@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="ChimeraParty"
+config/name="Chimera Party"
 run/main_scene="res://ui/main_menu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"

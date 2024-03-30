@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://c72yce6p8dtt6"]
 
 [ext_resource type="Script" path="res://autoload/game.gd" id="1_e4b7m"]
-[ext_resource type="Script" path="res://resources/player_resource.gd" id="2_e43pt"]
+[ext_resource type="Script" path="res://scripts/player_resource.gd" id="2_e43pt"]
 
 [sub_resource type="Resource" id="Resource_2mytf"]
 script = ExtResource("2_e43pt")
@@ -116,7 +116,6 @@ grow_vertical = 2
 script = ExtResource("1_e4b7m")
 test = true
 test_players = Array[ExtResource("2_e43pt")]([SubResource("Resource_2mytf"), SubResource("Resource_f8b6q")])
-test_game_path = "res://game/secret_files/secret_files.tscn"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 100
@@ -145,9 +144,11 @@ anchor_bottom = 1.0
 offset_top = -293.0
 grow_horizontal = 2
 grow_vertical = 0
+mouse_filter = 2
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Fade/MarginContainer"]
 layout_mode = 2
+mouse_filter = 2
 bbcode_enabled = true
 text = "[right][font_size=120]Loading [wave amp=150 freq=10]...[/wave][/font_size][/right]"
 fit_content = true

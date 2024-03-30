@@ -4,3 +4,6 @@
 # Aseprite
 *.ase
 *.aseprite
+
+# Project
+builds/
