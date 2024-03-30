@@ -1,0 +1,10 @@
+[gd_resource type="Theme" format=3 uid="uid://dipj4q6bj1b6"]
+
+[resource]
+default_font_size = 48
+MarginContainer/constants/margin_bottom = 64
+MarginContainer/constants/margin_left = 64
+MarginContainer/constants/margin_right = 64
+MarginContainer/constants/margin_top = 64
+TitleLabel/base_type = &"Label"
+TitleLabel/font_sizes/font_size = 128

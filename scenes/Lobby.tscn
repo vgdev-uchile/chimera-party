@@ -1,141 +1,39 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=5 format=3 uid="uid://cw3m5816h6deg"]
 
-[ext_resource path="res://scenes/PlayerSelection.tscn" type="PackedScene" id=1]
-[ext_resource path="res://fonts/m6x11.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://scripts/Lobby.gd" type="Script" id=3]
+[ext_resource type="Script" path="res://scenes/lobby.gd" id="1_1nrrg"]
+[ext_resource type="PackedScene" uid="uid://c87cowtynwm55" path="res://player/chimerin.tscn" id="2_gengn"]
+[ext_resource type="TileSet" uid="uid://clb1dske3cig2" path="res://resources/lab_tile_set.tres" id="3_j0ywb"]
+[ext_resource type="PackedScene" uid="uid://dg7r13os1b60i" path="res://scenes/color_base.tscn" id="4_7fuap"]
 
-[sub_resource type="StyleBoxFlat" id=1]
-bg_color = Color( 0.137255, 0.12549, 0.12549, 1 )
+[node name="Lobby" type="Node2D"]
+script = ExtResource("1_1nrrg")
+player_scene = ExtResource("2_gengn")
 
-[sub_resource type="DynamicFont" id=2]
-size = 128
-font_data = ExtResource( 2 )
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2(-48, -36)
+scale = Vector2(6, 6)
+tile_set = ExtResource("3_j0ywb")
+format = 2
+layer_0/tile_data = PackedInt32Array(0, 1, 0, 1, 1, 0, 4, 1, 0, 3, 1, 0, 2, 1, 0, 5, 1, 0, 6, 1, 0, 7, 1, 0, 8, 1, 0, 9, 1, 0, 10, 1, 0, 11, 1, 0, 12, 1, 0, 327689, 1, 0, 262153, 1, 0, 196617, 1, 0, 131081, 1, 0, 65545, 1, 0, 65544, 1, 0, 65543, 1, 0, 65542, 1, 0, 65541, 1, 0, 65540, 1, 0, 65539, 1, 0, 65538, 1, 0, 65537, 1, 0, 65536, 1, 0, 131072, 1, 0, 196608, 1, 0, 262144, 1, 0, 327680, 1, 0, 393216, 1, 0, 458752, 1, 0, 524288, 1, 0, 524289, 1, 0, 458753, 1, 0, 393217, 1, 0, 327681, 1, 0, 262145, 1, 0, 196609, 1, 0, 131073, 1, 0, 131074, 1, 0, 196610, 1, 0, 262146, 1, 0, 327682, 1, 0, 393218, 1, 0, 458754, 1, 0, 524290, 1, 0, 524291, 1, 0, 458755, 1, 0, 393219, 1, 0, 327683, 1, 0, 262147, 1, 0, 196611, 1, 0, 131075, 1, 0, 131076, 1, 0, 196612, 1, 0, 262148, 1, 0, 327684, 1, 0, 393220, 1, 0, 458756, 1, 0, 524292, 1, 0, 524293, 1, 0, 458757, 1, 0, 393221, 1, 0, 327685, 1, 0, 262149, 1, 0, 196613, 1, 0, 131077, 1, 0, 131078, 1, 0, 196614, 1, 0, 262150, 1, 0, 327686, 1, 0, 393222, 1, 0, 458758, 1, 0, 524294, 1, 0, 524295, 1, 0, 458759, 1, 0, 393223, 1, 0, 327687, 1, 0, 262151, 1, 0, 196615, 1, 0, 131079, 1, 0, 131080, 1, 0, 196616, 1, 0, 262152, 1, 0, 327688, 1, 0, 393224, 1, 0, 458760, 1, 0, 524296, 1, 0, 524297, 1, 0, 458761, 1, 0, 393225, 1, 0, 393226, 1, 0, 327690, 1, 0, 262154, 1, 0, 196618, 1, 0, 131082, 1, 0, 65546, 1, 0, 65547, 1, 0, 131083, 1, 0, 196619, 1, 0, 262155, 1, 0, 327691, 1, 0, 393227, 1, 0, 458763, 1, 0, 458762, 1, 0, 524298, 1, 0, 524299, 1, 0, 524300, 1, 0, 458764, 1, 0, 393228, 1, 0, 327692, 1, 0, 262156, 1, 0, 196620, 1, 0, 131084, 1, 0, 65548, 1, 0, 65549, 1, 0, 131085, 1, 0, 196621, 1, 0, 262157, 1, 0, 327693, 1, 0, 393229, 1, 0, 458765, 1, 0, 524301, 1, 0, 13, 1, 0)
 
-[sub_resource type="Animation" id=3]
-resource_name = "count_down"
-length = 3.0
-tracks/0/type = "value"
-tracks/0/path = NodePath("Panel/Label:text")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 1, 2 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 1,
-"values": [ "3", "2", "1" ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Panel/Label:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Color( 0, 1, 0, 1 ) ]
-}
+[node name="ColorBase" parent="." instance=ExtResource("4_7fuap")]
+position = Vector2(350, 300)
+color = Color(0.67451, 0.196078, 0.196078, 1)
 
-[sub_resource type="Animation" id=4]
-resource_name = "go"
-tracks/0/type = "value"
-tracks/0/path = NodePath("Panel/Label:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Color( 0, 1, 0, 1 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Panel/Label:text")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ "Empieza!" ]
-}
+[node name="ColorBase2" parent="." instance=ExtResource("4_7fuap")]
+position = Vector2(1570, 300)
+color = Color(0.270588, 0.156863, 0.235294, 1)
 
-[sub_resource type="Animation" id=5]
-resource_name = "waiting"
-tracks/0/type = "value"
-tracks/0/path = NodePath("Panel/Label:text")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ "Esperando" ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Panel/Label:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Color( 1, 0, 0, 1 ) ]
-}
+[node name="ColorBase3" parent="." instance=ExtResource("4_7fuap")]
+position = Vector2(350, 780)
+color = Color(0.6, 0.898039, 0.313726, 1)
 
-[node name="Lobby" type="CanvasLayer"]
-script = ExtResource( 3 )
+[node name="ColorBase4" parent="." instance=ExtResource("4_7fuap")]
+position = Vector2(1570, 780)
+color = Color(0.85098, 0.627451, 0.4, 1)
 
-[node name="Panel" type="Panel" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-custom_styles/panel = SubResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Players" type="Node2D" parent="."]
+y_sort_enabled = true
 
-[node name="PlayerSelection" type="Node2D" parent="Panel"]
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="PlayerSelection0" parent="Panel/PlayerSelection" instance=ExtResource( 1 )]
-position = Vector2( 300, 1000 )
-
-[node name="PlayerSelection1" parent="Panel/PlayerSelection" instance=ExtResource( 1 )]
-position = Vector2( 740, 1000 )
-
-[node name="PlayerSelection2" parent="Panel/PlayerSelection" instance=ExtResource( 1 )]
-position = Vector2( 1180, 1000 )
-
-[node name="PlayerSelection3" parent="Panel/PlayerSelection" instance=ExtResource( 1 )]
-position = Vector2( 1620, 1000 )
-
-[node name="Label" type="Label" parent="Panel"]
-modulate = Color( 1, 0, 0, 1 )
-anchor_right = 1.0
-margin_right = 0.00012207
-margin_bottom = 400.0
-custom_fonts/font = SubResource( 2 )
-text = "Esperando"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/count_down = SubResource( 3 )
-anims/go = SubResource( 4 )
-anims/waiting = SubResource( 5 )
-next/count_down = "go"
+[node name="PlayerSpawn" type="Marker2D" parent="."]
+position = Vector2(960, 540)

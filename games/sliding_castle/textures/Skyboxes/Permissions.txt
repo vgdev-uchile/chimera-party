@@ -1,7 +1,0 @@
-Hello! :) Although these textures were meant to be used as skyboxes within unity, please feel free to use them within whatever software or project you'd like,
-even commercially!
-
-However, please do not redestribute them on their own or as part of another asset pack. Only do so as part of your projects and games. If you'd like to share it,
-please direct people back to the itch.io page you got it from.
-
-Have fun!
