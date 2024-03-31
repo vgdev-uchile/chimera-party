@@ -9,6 +9,7 @@ var _splat_sfx = preload("res://assets/sfx/splat.mp3")
 @onready var players: Node2D = $Players
 @onready var player_spawn: Marker2D = $PlayerSpawn
 @onready var shake_camera: Camera2D = $ShakeCamera
+@onready var ready_area: Area2D = $ReadyArea
 
 
 func _enter_tree() -> void:
@@ -34,14 +35,11 @@ func _ready() -> void:
 		Game.load_random_game()
 		return
 	Game.player_color_changed.connect(_on_player_color_changed)
+	ready_area.player_ready.connect(_on_player_ready)
+	ready_area.game_ready.connect(func(): Game.load_random_game())
 
 
 func _input(event: InputEvent) -> void:
-	if Input.is_action_just_pressed("menu"):
-		get_tree().reload_current_scene()
-		Game.players = []
-	if Input.is_action_just_pressed("start"):
-		Game.load_random_game()
 	for i in 8:
 		var action = "check_player_%d" % i
 		if InputMap.has_action(action) && event.is_action_pressed(action):
@@ -94,6 +92,7 @@ func _reset_player(player: Chimerin) -> void:
 func _on_player_color_changed(player: Statics.PlayerData) -> void:
 	var lobby_data = _lobby[player]
 	lobby_data.remove_target()
+	lobby_data.has_color = true
 	
 	# check if there is others players of the same color not target
 	for other_player in Game.players:
@@ -111,17 +110,37 @@ func _on_player_fired(player: Statics.PlayerData) -> void:
 	shake_camera.shake()
 	var chimerin = _lobby[player].player as Chimerin
 	var target = _lobby[player].target
+	_lobby.erase(player)
 	chimerin.disable(true, false)
 	target.reparent(self)
 	var tween = chimerin.create_tween()
 	tween.tween_property(chimerin, "rotation", randf_range(PI / 4, PI / 2) * (randi() % 2 * 2 - 1), 0.2)
 	tween.tween_property(chimerin, "modulate:a", 0, 1)
+
+
+func _on_player_ready(player: Statics.PlayerData, value: bool) -> void:
+	if not _lobby.has(player):
+		return
+	var lobby_data = _lobby[player]
+	lobby_data.is_ready = value
 	
+	_check_game_ready()
+
+
+func _check_game_ready() -> void:
+	var game_ready = true
+	for lobby_data in _lobby.values():
+		if not lobby_data.has_color or not lobby_data.is_ready:
+			game_ready = false
+			break
+	ready_area.enable(game_ready)
 
 
 class LobbyData:
 	var player: Chimerin = null
 	var target: Node2D = null
+	var has_color: bool = false
+	var is_ready: bool = false
 	
 	func remove_target():
 		if is_instance_valid(target):
@@ -132,6 +151,8 @@ class LobbyData:
 			return null
 		target = target_scene.instantiate()
 		player.add_child(target)
+		has_color = false
 		return target
 	
+
 

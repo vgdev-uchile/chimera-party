@@ -73,6 +73,8 @@ func load_scene(path):
 
 
 func load_random_game():
+	if games.is_empty():
+		return
 	current_game = games[randi() % games.size()]
 	load_scene("res://ui/game_info.tscn")
 
