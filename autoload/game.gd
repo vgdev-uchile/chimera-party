@@ -1,5 +1,6 @@
 extends Control
 
+signal player_color_changed(player)
 
 @export var test: bool = false
 @export var test_players: Array[PlayerResource] = []
@@ -83,3 +84,16 @@ func load_current_game():
 func end_game() -> void:
 	Game.players.clear()
 	load_scene("res://ui/main_menu.tscn")
+
+
+func change_player_color(player: Statics.PlayerData, color: Color) -> void:
+	player.primary_color = color
+	player_color_changed.emit(player)
+
+
+func play_sound(stream: AudioStream) -> void:
+	var audio_stream_player = AudioStreamPlayer.new()
+	add_child(audio_stream_player)
+	audio_stream_player.stream = stream
+	audio_stream_player.play()
+	audio_stream_player.finished.connect(audio_stream_player.queue_free)

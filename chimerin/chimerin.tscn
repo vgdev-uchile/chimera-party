@@ -1,8 +1,7 @@
-[gd_scene load_steps=47 format=3 uid="uid://c87cowtynwm55"]
+[gd_scene load_steps=45 format=3 uid="uid://c87cowtynwm55"]
 
 [ext_resource type="Script" path="res://chimerin/chimerin.gd" id="1_15ywb"]
 [ext_resource type="Texture2D" uid="uid://bfnw8alh0373h" path="res://chimerin/assets/idle_down_body.png" id="2_i72dj"]
-[ext_resource type="Shader" path="res://shaders/color_swap.gdshader" id="3_w6v7j"]
 [ext_resource type="Texture2D" uid="uid://dlqcf1i8tg58y" path="res://chimerin/assets/idle_down_eye.png" id="4_xas15"]
 [ext_resource type="Script" path="res://scripts/copycat_sprite_2d.gd" id="5_21cin"]
 [ext_resource type="Texture2D" uid="uid://cjkkumov2xd1o" path="res://chimerin/assets/idle_left_body.png" id="6_pfeyc"]
@@ -21,12 +20,6 @@
 [ext_resource type="Texture2D" uid="uid://6y1yy8k8barx" path="res://chimerin/assets/walk_up_eye.png" id="19_ihmhs"]
 [ext_resource type="AnimationNodeBlendSpace2D" uid="uid://cntipd261meqe" path="res://chimerin/resources/chimerin_idle.tres" id="20_4qaqm"]
 [ext_resource type="AnimationNodeBlendSpace2D" uid="uid://300ri3b7y0lv" path="res://chimerin/resources/chimerin_walk.tres" id="21_3adc7"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_30ydb"]
-shader = ExtResource("3_w6v7j")
-shader_parameter/from = Color(0.372549, 0.803922, 0.894118, 1)
-shader_parameter/to = Color(1, 0, 0, 1)
-shader_parameter/tolerance = null
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1ptji"]
 radius = 24.0
@@ -621,7 +614,6 @@ texture = ExtResource("2_i72dj")
 metadata/_edit_group_ = true
 
 [node name="EyeSprite" type="Sprite2D" parent="Pivot/BodySprite" node_paths=PackedStringArray("source")]
-material = SubResource("ShaderMaterial_30ydb")
 texture = ExtResource("4_xas15")
 script = ExtResource("5_21cin")
 source = NodePath("..")
@@ -642,17 +634,5 @@ libraries = {
 tree_root = SubResource("AnimationNodeStateMachine_v0158")
 anim_player = NodePath("../AnimationPlayer")
 "parameters/BlendSpace2D 2/blend_position" = Vector2(0, 0)
-parameters/idle/blend_position = Vector2(-0.107547, -0.0621119)
-parameters/walk/blend_position = Vector2(-0.756604, 0.552795)
-
-[node name="Label" type="Label" parent="."]
-offset_left = -350.0
-offset_top = 14.0
-offset_right = 350.0
-offset_bottom = 59.0
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 10
-theme_override_font_sizes/font_size = 32
-text = "name"
-horizontal_alignment = 1
-clip_text = true
+parameters/idle/blend_position = Vector2(0, 1)
+parameters/walk/blend_position = Vector2(0, 1)

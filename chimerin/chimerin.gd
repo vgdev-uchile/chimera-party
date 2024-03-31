@@ -12,6 +12,7 @@ var data: Statics.PlayerData
 @onready var pivot: Node2D = $Pivot
 @onready var body_sprite: Sprite2D = $Pivot/BodySprite
 @onready var label: Label = $Label
+@onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 
 
 
@@ -51,12 +52,18 @@ func _on_animation_finished(anim_name: StringName):
 func setup(player_data: Statics.PlayerData) -> void:
 	data = player_data
 	input = player_data.input
-	change_color(player_data.primary_color)
-	label.text = player_data.name
+	body_sprite.self_modulate = player_data.primary_color
 
 
 func change_color(color: Color):
 	body_sprite.self_modulate = color
-	for player in Game.players:
-		if player.input == input:
-			player.primary_color = color
+	Game.change_player_color(data, color)
+
+
+func disable(value: bool, reset_animation: bool = true) -> void:
+	set_physics_process(!value)
+	playback.travel("idle")
+	collision_shape_2d.set_deferred("disabled", value)
+	if reset_animation:
+		animation_tree.set("parameters/idle/blend_position", Vector2.DOWN)
+		animation_tree.set("parameters/walk/blend_position", Vector2.DOWN)

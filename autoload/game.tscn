@@ -5,13 +5,11 @@
 
 [sub_resource type="Resource" id="Resource_2mytf"]
 script = ExtResource("2_e43pt")
-name = "red"
 color = Color(1, 0, 0, 1)
 input = 0
 
 [sub_resource type="Resource" id="Resource_f8b6q"]
 script = ExtResource("2_e43pt")
-name = "blue"
 color = Color(0, 0, 1, 1)
 input = 3
 
@@ -114,7 +112,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_e4b7m")
-test = true
 test_players = Array[ExtResource("2_e43pt")]([SubResource("Resource_2mytf"), SubResource("Resource_f8b6q")])
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]

@@ -11,6 +11,8 @@ func _ready() -> void:
 	options.pressed.connect(_on_options_pressed)
 	credits.pressed.connect(_on_credits_pressed)
 	quit.pressed.connect(func (): get_tree().quit())
+	
+	start_game.grab_focus()
 
 
 func _on_start_game_pressed():

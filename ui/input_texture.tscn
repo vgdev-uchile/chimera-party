@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://cs3s8wk35k05q"]
+
+[ext_resource type="Texture2D" uid="uid://ciuludia4ifgt" path="res://ui/input.png" id="1_gckvb"]
+[ext_resource type="Script" path="res://ui/input_texture.gd" id="2_nop46"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hagmf"]
+resource_local_to_scene = true
+atlas = ExtResource("1_gckvb")
+region = Rect2(160, 0, 16, 16)
+
+[node name="InputTexture" type="TextureRect"]
+custom_minimum_size = Vector2(96, 96)
+texture = SubResource("AtlasTexture_hagmf")
+script = ExtResource("2_nop46")
