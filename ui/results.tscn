@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=3 uid="uid://b210ki0jrl5sh"]
+
+[ext_resource type="Script" path="res://ui/results.gd" id="1_xx2mr"]
+[ext_resource type="PackedScene" uid="uid://cvr72p7s1g06q" path="res://ui/score_card.tscn" id="2_bm47c"]
+
+[node name="Results" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xx2mr")
+score_card_scene = ExtResource("2_bm47c")
+
+[node name="ScoreCardContainer" type="HBoxContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 50
+
+[node name="ScoreCard" parent="ScoreCardContainer" instance_placeholder="res://ui/score_card.tscn"]
+layout_mode = 2
+
+[node name="ScoreCard2" parent="ScoreCardContainer" instance_placeholder="res://ui/score_card.tscn"]
+layout_mode = 2
+
+[node name="ScoreCard3" parent="ScoreCardContainer" instance_placeholder="res://ui/score_card.tscn"]
+layout_mode = 2
+
+[node name="ScoreCard4" parent="ScoreCardContainer" instance_placeholder="res://ui/score_card.tscn"]
+layout_mode = 2

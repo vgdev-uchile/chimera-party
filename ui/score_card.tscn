@@ -1,0 +1,77 @@
+[gd_scene load_steps=5 format=3 uid="uid://cvr72p7s1g06q"]
+
+[ext_resource type="Script" path="res://ui/score_card.gd" id="1_qlkfo"]
+[ext_resource type="Texture2D" uid="uid://bfnw8alh0373h" path="res://chimerin/assets/idle_down_body.png" id="2_4ye6i"]
+[ext_resource type="Texture2D" uid="uid://dlqcf1i8tg58y" path="res://chimerin/assets/idle_down_eye.png" id="3_4aqk7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8yky5"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[node name="ScoreCard" type="PanelContainer"]
+theme_override_styles/panel = SubResource("StyleBoxFlat_8yky5")
+script = ExtResource("1_qlkfo")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Body" type="TextureRect" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+texture = ExtResource("2_4ye6i")
+
+[node name="Eye" type="TextureRect" parent="MarginContainer/VBoxContainer/Body"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_4aqk7")
+
+[node name="Score" type="Label" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 16
+text = "1234"
+horizontal_alignment = 1
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 2
+
+[node name="LocalScore" type="Label" parent="Control"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = -67.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 16
+text = "+XXX"
+horizontal_alignment = 1
+
+[node name="Wins" type="Label" parent="Control"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 1.0
+offset_bottom = 68.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 16
+text = "Wins"
+horizontal_alignment = 1

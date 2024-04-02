@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="GameInfo" load_steps=4 format=3 uid="uid://dmv0x3ccvn08"]
+
+[ext_resource type="Script" path="res://scripts/game_info.gd" id="1_fodxx"]
+[ext_resource type="Script" path="res://scripts/game_input.gd" id="1_tcyst"]
+
+[sub_resource type="Resource" id="Resource_m24uy"]
+script = ExtResource("1_tcyst")
+inputs = 0
+description = ""
+
+[resource]
+script = ExtResource("1_fodxx")
+name = ""
+description = ""
+inputs = Array[ExtResource("1_tcyst")]([SubResource("Resource_m24uy")])

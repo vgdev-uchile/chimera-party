@@ -4,17 +4,20 @@ signal player_color_changed(player)
 
 @export var test: bool = false
 @export var test_players: Array[PlayerResource] = []
-
+@export var game_amount = 5
 var players: Array[Statics.PlayerData] = []
 var games: Array[String] = []
 var current_game: String
-
 var _games_directory: String = "res://games/"
 var _scene_to_load: String
+var _games_remaining := 0
+var _game_probability: Array[float] = []
 @onready var animation_player: AnimationPlayer = $CanvasLayer/Fade/AnimationPlayer
 
 
 func _ready() -> void:
+	_games_remaining = game_amount
+	
 	set_process(false)
 	
 	var local_games_directory = "res://builds/games/"
@@ -75,10 +78,20 @@ func load_scene(path):
 
 
 func load_random_game():
+	if _game_probability.is_empty():
+		_game_probability.resize(games.size())
+		_game_probability.fill(1)
+	if is_last_level():
+		return
 	if games.is_empty():
 		return
-	current_game = games[randi() % games.size()]
+	
+	var index = Statics.pick_by_weight(_game_probability)
+	_game_probability[index] /= 4
+	
+	current_game = games[index]
 	load_scene("res://ui/game_info.tscn")
+	_games_remaining -= 1
 
 
 func load_current_game():
@@ -86,8 +99,25 @@ func load_current_game():
 
 
 func end_game() -> void:
+	load_scene("res://ui/results.tscn")
+
+
+func game_over() -> void:
+	_games_remaining = game_amount
+	_game_probability.clear()
 	Game.players.clear()
 	load_scene("res://ui/main_menu.tscn")
+
+
+func is_last_level() -> bool:
+	return _games_remaining <= 0
+
+
+func is_winner(player_data: Statics.PlayerData) -> bool:
+	var winner_score = 0
+	for player in Game.players:
+		winner_score = max(winner_score, player.score)
+	return player_data.score == winner_score
 
 
 func change_player_color(player: Statics.PlayerData, color: Color) -> void:
