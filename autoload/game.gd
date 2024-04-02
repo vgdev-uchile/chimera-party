@@ -66,6 +66,8 @@ func get_current_game_info() -> GameInfo:
 	return load(_games_directory + current_game + "/info.tres")
 
 func load_scene(path):
+	if is_processing():
+		return
 	_scene_to_load = path
 	animation_player.play("fade_out")
 	ResourceLoader.load_threaded_request(_scene_to_load)

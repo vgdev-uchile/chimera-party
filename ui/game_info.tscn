@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://x8cea3v5rvo0"]
+[gd_scene load_steps=4 format=3 uid="uid://x8cea3v5rvo0"]
 
 [ext_resource type="Script" path="res://ui/game_info.gd" id="1_3vdmc"]
 [ext_resource type="Texture2D" uid="uid://mqpim3ho5i7n" path="res://icon.svg" id="1_hms18"]
+[ext_resource type="PackedScene" uid="uid://b2sj63yuj4e4y" path="res://ui/game_input.tscn" id="2_kmhfd"]
 
 [node name="GameInfo" type="Control"]
 layout_mode = 3
@@ -11,6 +12,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_3vdmc")
+game_input_scene = ExtResource("2_kmhfd")
 
 [node name="Image" type="TextureRect" parent="."]
 unique_name_in_owner = true

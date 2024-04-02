@@ -11,7 +11,6 @@ var data: Statics.PlayerData
 @onready var playback: AnimationNodeStateMachinePlayback = animation_tree.get("parameters/playback")
 @onready var pivot: Node2D = $Pivot
 @onready var body_sprite: Sprite2D = $Pivot/BodySprite
-@onready var label: Label = $Label
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 
 

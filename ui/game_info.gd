@@ -1,7 +1,7 @@
 extends Control
 
 
-var game_input_scene = preload("res://ui/game_input.tscn")
+@export var game_input_scene: PackedScene
 
 @onready var image: TextureRect = %Image
 @onready var title: Label = %Title
@@ -17,6 +17,8 @@ func _ready() -> void:
 	image.texture = info.image
 	title.text = info.name
 	description.text = info.description
+	if not game_input_scene:
+		return
 	for game_input in info.inputs:
 		var game_input_inst = game_input_scene.instantiate()
 		inputs_container.add_child(game_input_inst)

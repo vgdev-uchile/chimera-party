@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://b2sj63yuj4e4y"]
 
-[ext_resource type="Script" path="res://ui_lab/game_input.gd" id="1_hny1g"]
-[ext_resource type="Texture2D" uid="uid://ciuludia4ifgt" path="res://ui_lab/input.png" id="2_4kmq3"]
-[ext_resource type="PackedScene" uid="uid://cs3s8wk35k05q" path="res://ui_lab/input_texture.tscn" id="2_nswi1"]
+[ext_resource type="Script" path="res://ui/game_input.gd" id="1_hny1g"]
+[ext_resource type="Texture2D" uid="uid://ciuludia4ifgt" path="res://ui/input.png" id="2_4kmq3"]
+[ext_resource type="PackedScene" uid="uid://cs3s8wk35k05q" path="res://ui/input_texture.tscn" id="2_nswi1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y6e6h"]
 resource_local_to_scene = true
