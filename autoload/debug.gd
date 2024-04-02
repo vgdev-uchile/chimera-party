@@ -12,7 +12,7 @@ func _ready() -> void:
 	canvas_layer.add_child(container)
 
 
-func log(message: Variant, seconds: int = 2) -> void:
+func log(message: Variant, seconds: float = 2) -> void:
 	if !OS.is_debug_build():
 		return
 	

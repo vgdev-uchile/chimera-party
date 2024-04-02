@@ -76,7 +76,8 @@ func _create_player(player_input: int) -> void:
 	_lobby[player_data] = lobby_data
 	
 	_reset_player(player_inst)
-	
+
+
 func _reset_player(player: Chimerin) -> void:
 	player.disable(true)
 	player.global_position = Vector2(player_spawn.global_position.x, -100) + Vector2(randf_range(-50, 50), randf_range(-50, 50))
@@ -85,9 +86,7 @@ func _reset_player(player: Chimerin) -> void:
 	tween.tween_callback(Game.play_sound.bind(_splat_sfx))
 	tween.tween_callback(shake_camera.shake.bind(50))
 	tween.tween_callback(player.disable.bind(false))
-	
-	
-	
+
 
 func _on_player_color_changed(player: Statics.PlayerData) -> void:
 	var lobby_data = _lobby[player]
@@ -153,6 +152,3 @@ class LobbyData:
 		player.add_child(target)
 		has_color = false
 		return target
-	
-
-
