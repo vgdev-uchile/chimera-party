@@ -10,7 +10,11 @@ uniform vec4 from : source_color;
 uniform vec4 to : source_color;
 uniform float tolerance: hint_range(0.0, 1.0);
 
+varying flat vec4 modulate;
 
+void vertex() {
+	modulate = COLOR;
+}
 
 // Color space conversion from https://godotshaders.com/shader/color-range-swap/
 vec3 rgb2hsv(vec3 c)
@@ -52,5 +56,5 @@ void fragment()
 		tex.rgb = hsv2rgb(final_hsv);
 	}
 	
-	COLOR = tex;
+	COLOR = tex * modulate;
 }
