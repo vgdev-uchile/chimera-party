@@ -2,9 +2,17 @@
 
 [resource]
 default_font_size = 48
-MarginContainer/constants/margin_bottom = 64
-MarginContainer/constants/margin_left = 64
-MarginContainer/constants/margin_right = 64
-MarginContainer/constants/margin_top = 64
+BoxContainer/constants/separation = 12
+GridContainer/constants/h_separation = 12
+GridContainer/constants/v_separation = 12
+MarginContainer/constants/margin_bottom = 32
+MarginContainer/constants/margin_left = 32
+MarginContainer/constants/margin_right = 32
+MarginContainer/constants/margin_top = 32
+SmallMargin/base_type = &"MarginContainer"
+SmallMargin/constants/margin_bottom = 16
+SmallMargin/constants/margin_left = 16
+SmallMargin/constants/margin_right = 16
+SmallMargin/constants/margin_top = 16
 TitleLabel/base_type = &"Label"
 TitleLabel/font_sizes/font_size = 128

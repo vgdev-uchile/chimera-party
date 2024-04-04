@@ -28,13 +28,12 @@ func _enter_tree() -> void:
 func _ready() -> void:
 	if Game.test:
 		for test_player in Game.test_players:
-			var player_data = Statics.PlayerData.new()
+			var player_data = PlayerData.new()
 			player_data.input = test_player.input
 			player_data.primary_color = test_player.color
 			Game.players.append(player_data)
 		Game.load_random_game()
 		return
-	Game.player_color_changed.connect(_on_player_color_changed)
 	ready_area.player_ready.connect(_on_player_ready)
 	ready_area.game_ready.connect(func(): Game.load_random_game())
 
@@ -64,12 +63,13 @@ func _create_player(player_input: int) -> void:
 	if not player_scene:
 		Debug.log("No player scene selected")
 		return
-	var player_data = Statics.PlayerData.new()
+	var player_data = PlayerData.new()
 	player_data.input = player_input
 	Game.players.append(player_data)
 	var player_inst = player_scene.instantiate()
 	players.add_child(player_inst)
 	player_inst.setup(player_data)
+	player_data.primary_color_changed.connect(func(color): _on_player_color_changed(player_data))
 	
 	var lobby_data = LobbyData.new()
 	lobby_data.player = player_inst
@@ -88,7 +88,7 @@ func _reset_player(player: Chimerin) -> void:
 	tween.tween_callback(player.disable.bind(false))
 
 
-func _on_player_color_changed(player: Statics.PlayerData) -> void:
+func _on_player_color_changed(player: PlayerData) -> void:
 	var lobby_data = _lobby[player]
 	lobby_data.remove_target()
 	lobby_data.has_color = true
@@ -104,7 +104,7 @@ func _on_player_color_changed(player: Statics.PlayerData) -> void:
 				target.fired.connect(_on_player_fired.bind(other_player))
 
 
-func _on_player_fired(player: Statics.PlayerData) -> void:
+func _on_player_fired(player: PlayerData) -> void:
 	Game.players.erase(player)
 	shake_camera.shake()
 	var chimerin = _lobby[player].player as Chimerin
@@ -117,7 +117,7 @@ func _on_player_fired(player: Statics.PlayerData) -> void:
 	tween.tween_property(chimerin, "modulate:a", 0, 1)
 
 
-func _on_player_ready(player: Statics.PlayerData, value: bool) -> void:
+func _on_player_ready(player: PlayerData, value: bool) -> void:
 	if not _lobby.has(player):
 		return
 	var lobby_data = _lobby[player]

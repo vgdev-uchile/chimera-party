@@ -13,7 +13,7 @@ func _ready() -> void:
 	wins.hide()
 
 
-func setup(data: Statics.PlayerData) -> void:
+func setup(data: PlayerData) -> void:
 	_set_color(data.primary_color)
 	score.text = str(data.score)
 	#await get_tree().create_timer(1).timeout

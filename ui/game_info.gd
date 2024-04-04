@@ -21,8 +21,8 @@ func _ready() -> void:
 		return
 	for game_input in info.inputs:
 		var game_input_inst = game_input_scene.instantiate()
-		inputs_container.add_child(game_input_inst)
 		game_input_inst.setup(game_input)
+		inputs_container.add_child(game_input_inst)
 
 
 func _input(event: InputEvent) -> void:

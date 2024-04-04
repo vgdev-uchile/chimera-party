@@ -4,8 +4,8 @@ signal player_color_changed(player)
 
 @export var test: bool = false
 @export var test_players: Array[PlayerResource] = []
-@export var game_amount = 5
-var players: Array[Statics.PlayerData] = []
+@export var game_amount: int = 5
+var players: Array[PlayerData] = []
 var games: Array[String] = []
 var current_game: String
 var _games_directory: String = "res://games/"
@@ -113,16 +113,11 @@ func is_last_level() -> bool:
 	return _games_remaining <= 0
 
 
-func is_winner(player_data: Statics.PlayerData) -> bool:
+func is_winner(player_data: PlayerData) -> bool:
 	var winner_score = 0
 	for player in Game.players:
 		winner_score = max(winner_score, player.score)
 	return player_data.score == winner_score
-
-
-func change_player_color(player: Statics.PlayerData, color: Color) -> void:
-	player.primary_color = color
-	player_color_changed.emit(player)
 
 
 func play_sound(stream: AudioStream) -> void:
