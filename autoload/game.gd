@@ -8,6 +8,7 @@ signal player_color_changed(player)
 var players: Array[PlayerData] = []
 var games: Array[String] = []
 var current_game: String
+var loading: bool = false
 var _games_directory: String = "res://games/"
 var _scene_to_load: String
 var _games_remaining := 0
@@ -50,31 +51,27 @@ func _process(delta: float) -> void:
 	match status:
 		ResourceLoader.THREAD_LOAD_INVALID_RESOURCE:
 			Debug.log("Invalid resource")
-			animation_player.play("fade_in")
-			set_process(false)
+			_fade_in()
 		ResourceLoader.THREAD_LOAD_IN_PROGRESS:
 			pass
 		ResourceLoader.THREAD_LOAD_FAILED:
 			Debug.log("Load failed")
-			animation_player.play("fade_in")
-			set_process(false)
+			_fade_in()
 		ResourceLoader.THREAD_LOAD_LOADED:
 			var loaded_scene = ResourceLoader.load_threaded_get(_scene_to_load)
 			get_tree().change_scene_to_packed(loaded_scene)
-			animation_player.play("fade_in")
-			set_process(false)
+			_fade_in()
 
 
 func get_current_game_info() -> GameInfo:
 	return load(_games_directory + current_game + "/info.tres")
 
 func load_scene(path):
-	if is_processing():
+	if loading:
 		return
+	_fade_out()
 	_scene_to_load = path
-	animation_player.play("fade_out")
 	ResourceLoader.load_threaded_request(_scene_to_load)
-	set_process(true)
 
 
 func load_random_game():
@@ -126,3 +123,16 @@ func play_sound(stream: AudioStream) -> void:
 	audio_stream_player.stream = stream
 	audio_stream_player.play()
 	audio_stream_player.finished.connect(audio_stream_player.queue_free)
+
+
+func _fade_out() -> void:
+	loading = true
+	animation_player.play("fade_out")
+	set_process(true)
+
+
+func _fade_in() -> void:
+	set_process(false)
+	animation_player.play("fade_in")
+	await animation_player.animation_finished
+	loading = false

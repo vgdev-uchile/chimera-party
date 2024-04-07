@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://b210ki0jrl5sh"]
 
-[ext_resource type="Script" path="res://ui/results.gd" id="1_xx2mr"]
+[ext_resource type="Script" path="res://ui/menu/results.gd" id="1_xx2mr"]
 [ext_resource type="PackedScene" uid="uid://cvr72p7s1g06q" path="res://ui/score_card.tscn" id="2_bm47c"]
 
 [node name="Results" type="Control"]

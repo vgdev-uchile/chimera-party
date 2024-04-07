@@ -1,9 +1,9 @@
 extends Control
 
-@onready var start_game: Button = %StartGame
-@onready var options: Button = %Options
-@onready var credits: Button = %Credits
-@onready var quit: Button = %Quit
+@onready var start_game: ClipboardButton = %StartGame
+@onready var options: ClipboardButton = %Options
+@onready var credits: ClipboardButton = %Credits
+@onready var quit: ClipboardButton = %Quit
 
 
 func _ready() -> void:
@@ -25,3 +25,4 @@ func _on_options_pressed():
 
 func _on_credits_pressed():
 	pass
+

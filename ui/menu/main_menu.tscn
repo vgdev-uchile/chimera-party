@@ -1,0 +1,172 @@
+[gd_scene load_steps=16 format=3 uid="uid://bdw1l3krnkjt2"]
+
+[ext_resource type="Script" path="res://ui/menu/main_menu.gd" id="1_03p47"]
+[ext_resource type="Shader" path="res://shaders/animated_diamond_pattern.gdshader" id="3_7mul4"]
+[ext_resource type="Texture2D" uid="uid://dymbhfk5n26he" path="res://assets/ui_boder.png" id="3_o1xp0"]
+[ext_resource type="Texture2D" uid="uid://dolntf1bnfca0" path="res://chimerin/assets/walk_down_body.png" id="3_qse3j"]
+[ext_resource type="Texture2D" uid="uid://dlqcf1i8tg58y" path="res://chimerin/assets/idle_down_eye.png" id="4_dxp1o"]
+[ext_resource type="FontFile" uid="uid://d2prf68aedwvv" path="res://assets/fonts/Abaddon_Fonts_v1.2/Abaddon Bold.ttf" id="4_hirpm"]
+[ext_resource type="PackedScene" uid="uid://c7rdqamwimg5x" path="res://ui/clipboard_button.tscn" id="4_jnvm8"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2v4ai"]
+shader = ExtResource("3_7mul4")
+shader_parameter/color = Color(0, 0.501961, 1, 0.345098)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_asyuy"]
+content_margin_left = 36.0
+content_margin_top = 36.0
+texture = ExtResource("3_o1xp0")
+texture_margin_left = 48.0
+texture_margin_top = 48.0
+texture_margin_right = 30.0
+texture_margin_bottom = 30.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6mn1d"]
+content_margin_left = 16.0
+content_margin_top = 16.0
+content_margin_right = 16.0
+content_margin_bottom = 16.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eitt1"]
+atlas = ExtResource("3_qse3j")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uexsu"]
+atlas = ExtResource("3_qse3j")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v4vm3"]
+atlas = ExtResource("3_qse3j")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_enks7"]
+atlas = ExtResource("3_qse3j")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rw1gn"]
+animations = [{
+"frames": [{
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_eitt1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uexsu")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_v4vm3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_enks7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_03p47")
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_2v4ai")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -71.0
+offset_right = 40.0
+grow_vertical = 0
+theme_type_variation = &"BigMargin"
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_asyuy")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/line_spacing = -32
+theme_override_fonts/font = ExtResource("4_hirpm")
+theme_override_font_sizes/font_size = 96
+text = "Chimera
+Party"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="StartGame" parent="MarginContainer/PanelContainer/VBoxContainer/VBoxContainer" instance=ExtResource("4_jnvm8")]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Start game"
+
+[node name="Options" parent="MarginContainer/PanelContainer/VBoxContainer/VBoxContainer" instance=ExtResource("4_jnvm8")]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Options"
+
+[node name="Credits" parent="MarginContainer/PanelContainer/VBoxContainer/VBoxContainer" instance=ExtResource("4_jnvm8")]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Credits"
+
+[node name="Quit" parent="MarginContainer/PanelContainer/VBoxContainer/VBoxContainer" instance=ExtResource("4_jnvm8")]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Quit"
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "test 1.42b"
+horizontal_alignment = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+layout_mode = 1
+offset_right = 1920.0
+offset_bottom = 371.0
+theme_type_variation = &"BigMargin"
+theme_override_constants/margin_top = 128
+
+[node name="Label" type="Label" parent="MarginContainer2"]
+visible = false
+layout_mode = 2
+theme_type_variation = &"TitleLabel"
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 32
+theme_override_styles/normal = SubResource("StyleBoxEmpty_6mn1d")
+text = "Chimera Party"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1234, 592)
+scale = Vector2(12, 12)
+sprite_frames = SubResource("SpriteFrames_rw1gn")
+autoplay = "default"
+frame_progress = 0.247332
+
+[node name="Sprite2D" type="Sprite2D" parent="AnimatedSprite2D"]
+texture = ExtResource("4_dxp1o")
