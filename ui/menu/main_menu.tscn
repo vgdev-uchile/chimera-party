@@ -142,7 +142,7 @@ text = "Quit"
 [node name="Label" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
-text = "test 1.42b"
+text = "v1.0.0-beta"
 horizontal_alignment = 2
 
 [node name="MarginContainer2" type="MarginContainer" parent="."]

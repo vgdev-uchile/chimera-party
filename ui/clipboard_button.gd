@@ -15,7 +15,6 @@ signal pressed
 @export var disable_siblings_on_press = true
 
 @onready var label: Label = %Label
-@onready var check: TextureRect = %Check
 @onready var focus_animation_player: AnimationPlayer = %FocusAnimationPlayer
 @onready var check_animation_player: AnimationPlayer = %CheckAnimationPlayer
 

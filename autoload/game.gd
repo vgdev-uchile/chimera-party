@@ -96,14 +96,14 @@ func load_current_game():
 
 
 func end_game() -> void:
-	load_scene("res://ui/results.tscn")
+	load_scene("res://ui/menu/results.tscn")
 
 
 func game_over() -> void:
 	_games_remaining = game_amount
 	_game_probability.clear()
 	Game.players.clear()
-	load_scene("res://ui/main_menu.tscn")
+	load_scene("res://ui/menu/main_menu.tscn")
 
 
 func is_last_level() -> bool:
