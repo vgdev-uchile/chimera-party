@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://c72yce6p8dtt6"]
 
 [ext_resource type="Script" path="res://autoload/game.gd" id="1_e4b7m"]
-[ext_resource type="Script" path="res://scripts/player_resource.gd" id="2_e43pt"]
+[ext_resource type="Script" path="res://common/scripts/player_resource.gd" id="2_e43pt"]
 
 [sub_resource type="Resource" id="Resource_2mytf"]
 script = ExtResource("2_e43pt")

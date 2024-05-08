@@ -1,0 +1,70 @@
+[gd_scene load_steps=8 format=3 uid="uid://cw3m5816h6deg"]
+
+[ext_resource type="Script" path="res://scenes/lobby/lobby.gd" id="1_1nrrg"]
+[ext_resource type="PackedScene" uid="uid://c87cowtynwm55" path="res://common/chimerin/chimerin.tscn" id="2_gengn"]
+[ext_resource type="TileSet" uid="uid://clb1dske3cig2" path="res://resources/lab_tile_set.tres" id="3_j0ywb"]
+[ext_resource type="PackedScene" uid="uid://dg7r13os1b60i" path="res://scenes/lobby/color_base.tscn" id="4_7fuap"]
+[ext_resource type="PackedScene" uid="uid://inb50erkyiw4" path="res://scenes/shake_camera.tscn" id="5_ak2nu"]
+[ext_resource type="PackedScene" uid="uid://d1ukvbmjhtv38" path="res://scenes/lobby/ready_area.tscn" id="6_divbx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_43fry"]
+size = Vector2(200, 2000)
+
+[node name="Lobby" type="Node2D"]
+script = ExtResource("1_1nrrg")
+player_scene = ExtResource("2_gengn")
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2(-48, -36)
+scale = Vector2(6, 6)
+tile_set = ExtResource("3_j0ywb")
+format = 2
+layer_0/tile_data = PackedInt32Array(0, 1, 0, 1, 1, 0, 4, 1, 0, 3, 1, 0, 2, 1, 0, 5, 1, 0, 6, 1, 0, 7, 1, 0, 8, 1, 0, 9, 1, 0, 10, 1, 0, 11, 1, 0, 12, 1, 0, 327689, 1, 0, 262153, 1, 0, 196617, 1, 0, 131081, 1, 0, 65545, 1, 0, 65544, 1, 0, 65543, 1, 0, 65542, 1, 0, 65541, 1, 0, 65540, 1, 0, 65539, 1, 0, 65538, 1, 0, 65537, 1, 0, 65536, 1, 0, 131072, 1, 0, 196608, 1, 0, 262144, 1, 0, 327680, 1, 0, 393216, 1, 0, 458752, 1, 0, 524288, 1, 0, 524289, 1, 0, 458753, 1, 0, 393217, 1, 0, 327681, 1, 0, 262145, 1, 0, 196609, 1, 0, 131073, 1, 0, 131074, 1, 0, 196610, 1, 0, 262146, 1, 0, 327682, 1, 0, 393218, 1, 0, 458754, 1, 0, 524290, 1, 0, 524291, 1, 0, 458755, 1, 0, 393219, 1, 0, 327683, 1, 0, 262147, 1, 0, 196611, 1, 0, 131075, 1, 0, 131076, 1, 0, 196612, 1, 0, 262148, 1, 0, 327684, 1, 0, 393220, 1, 0, 458756, 1, 0, 524292, 1, 0, 524293, 1, 0, 458757, 1, 0, 393221, 1, 0, 327685, 1, 0, 262149, 1, 0, 196613, 1, 0, 131077, 1, 0, 131078, 1, 0, 196614, 1, 0, 262150, 1, 0, 327686, 1, 0, 393222, 1, 0, 458758, 1, 0, 524294, 1, 0, 524295, 1, 0, 458759, 1, 0, 393223, 1, 0, 327687, 1, 0, 262151, 1, 0, 196615, 1, 0, 131079, 1, 0, 131080, 1, 0, 196616, 1, 0, 262152, 1, 0, 327688, 1, 0, 393224, 1, 0, 458760, 1, 0, 524296, 1, 0, 524297, 1, 0, 458761, 1, 0, 393225, 1, 0, 393226, 1, 0, 327690, 1, 0, 262154, 1, 0, 196618, 1, 0, 131082, 1, 0, 65546, 1, 0, 65547, 1, 0, 131083, 1, 0, 196619, 1, 0, 262155, 1, 0, 327691, 1, 0, 393227, 1, 0, 458763, 1, 0, 458762, 1, 0, 524298, 1, 0, 524299, 1, 0, 524300, 1, 0, 458764, 1, 0, 393228, 1, 0, 327692, 1, 0, 262156, 1, 0, 196620, 1, 0, 131084, 1, 0, 65548, 1, 0, 65549, 1, 0, 131085, 1, 0, 196621, 1, 0, 262157, 1, 0, 327693, 1, 0, 393229, 1, 0, 458765, 1, 0, 524301, 1, 0, 13, 1, 0, 589823, 1, 0, 524287, 1, 0, 458751, 1, 0, 393215, 1, 0, 327679, 1, 0, 262143, 1, 0, 196607, 1, 0, 131071, 1, 0, 65535, 1, 0, -1, 1, 0, -65536, 1, 0, -65535, 1, 0, -65534, 1, 0, -65533, 1, 0, -65532, 1, 0, -65531, 1, 0, -65530, 1, 0, -65529, 1, 0, -65528, 1, 0, -65527, 1, 0, -65526, 1, 0, -65525, 1, 0, -65524, 1, 0, -65523, 1, 0, -65522, 1, 0, 14, 1, 0, 65550, 1, 0, 131086, 1, 0, 196622, 1, 0, 262158, 1, 0, 327694, 1, 0, 393230, 1, 0, 458766, 1, 0, 524302, 1, 0)
+
+[node name="ReadyArea" parent="." instance=ExtResource("6_divbx")]
+position = Vector2(960, 540)
+
+[node name="ColorBase" parent="." instance=ExtResource("4_7fuap")]
+position = Vector2(350, 300)
+color = Color(0.67451, 0.196078, 0.196078, 1)
+
+[node name="ColorBase2" parent="." instance=ExtResource("4_7fuap")]
+position = Vector2(1570, 300)
+color = Color(0.270588, 0.156863, 0.235294, 1)
+
+[node name="ColorBase3" parent="." instance=ExtResource("4_7fuap")]
+position = Vector2(350, 780)
+color = Color(0.6, 0.898039, 0.313726, 1)
+
+[node name="ColorBase4" parent="." instance=ExtResource("4_7fuap")]
+position = Vector2(1570, 780)
+color = Color(0.85098, 0.627451, 0.4, 1)
+
+[node name="Players" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="PlayerSpawn" type="Marker2D" parent="."]
+position = Vector2(960, 540)
+
+[node name="ShakeCamera" parent="." instance=ExtResource("5_ak2nu")]
+position = Vector2(960, 540)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-80, 500)
+shape = SubResource("RectangleShape2D_43fry")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(2000, 500)
+shape = SubResource("RectangleShape2D_43fry")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(960, -50)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_43fry")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(960, 1170)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_43fry")

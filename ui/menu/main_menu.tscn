@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" path="res://ui/menu/main_menu.gd" id="1_03p47"]
 [ext_resource type="Shader" path="res://shaders/animated_diamond_pattern.gdshader" id="3_7mul4"]
-[ext_resource type="Texture2D" uid="uid://dymbhfk5n26he" path="res://assets/ui_boder.png" id="3_o1xp0"]
-[ext_resource type="Texture2D" uid="uid://dolntf1bnfca0" path="res://chimerin/assets/walk_down_body.png" id="3_qse3j"]
-[ext_resource type="Texture2D" uid="uid://dlqcf1i8tg58y" path="res://chimerin/assets/idle_down_eye.png" id="4_dxp1o"]
-[ext_resource type="FontFile" uid="uid://d2prf68aedwvv" path="res://assets/fonts/Abaddon_Fonts_v1.2/Abaddon Bold.ttf" id="4_hirpm"]
+[ext_resource type="Texture2D" uid="uid://dymbhfk5n26he" path="res://assets/sprites/ui_boder.png" id="3_o1xp0"]
+[ext_resource type="Texture2D" uid="uid://dolntf1bnfca0" path="res://common/chimerin/assets/walk_down_body.png" id="3_qse3j"]
+[ext_resource type="Texture2D" uid="uid://dlqcf1i8tg58y" path="res://common/chimerin/assets/idle_down_eye.png" id="4_dxp1o"]
+[ext_resource type="FontFile" uid="uid://d2prf68aedwvv" path="res://common/assets/fonts/Abaddon_Fonts_v1.2/Abaddon Bold.ttf" id="4_hirpm"]
 [ext_resource type="PackedScene" uid="uid://c7rdqamwimg5x" path="res://ui/clipboard_button.tscn" id="4_jnvm8"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2v4ai"]

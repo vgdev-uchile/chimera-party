@@ -1,0 +1,28 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://dipj4q6bj1b6"]
+
+[ext_resource type="FontFile" uid="uid://curhgcv5hcwqh" path="res://common/assets/fonts/dnf-paste-8x12.ttf" id="1_u4x7b"]
+[ext_resource type="FontFile" uid="uid://dh0hwfmlfr8tf" path="res://common/assets/fonts/Abaddon_Fonts_v1.2/Abaddon Light.ttf" id="2_yqaps"]
+
+[resource]
+default_font = ExtResource("2_yqaps")
+default_font_size = 48
+BigMargin/base_type = &"MarginContainer"
+BigMargin/constants/margin_bottom = 64
+BigMargin/constants/margin_left = 64
+BigMargin/constants/margin_right = 64
+BigMargin/constants/margin_top = 64
+BoxContainer/constants/separation = 12
+GridContainer/constants/h_separation = 12
+GridContainer/constants/v_separation = 12
+MarginContainer/constants/margin_bottom = 32
+MarginContainer/constants/margin_left = 32
+MarginContainer/constants/margin_right = 32
+MarginContainer/constants/margin_top = 32
+SmallMargin/base_type = &"MarginContainer"
+SmallMargin/constants/margin_bottom = 16
+SmallMargin/constants/margin_left = 16
+SmallMargin/constants/margin_right = 16
+SmallMargin/constants/margin_top = 16
+TitleLabel/base_type = &"Label"
+TitleLabel/font_sizes/font_size = 60
+TitleLabel/fonts/font = ExtResource("1_u4x7b")
