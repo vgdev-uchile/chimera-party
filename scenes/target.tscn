@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://d4ag0qrtyjruf"]
 
 [ext_resource type="Script" path="res://scenes/target.gd" id="1_yybnx"]
-[ext_resource type="Texture2D" uid="uid://c6dr0n3woonwb" path="res://assets/target.png" id="2_5276i"]
+[ext_resource type="Texture2D" uid="uid://c6dr0n3woonwb" path="res://assets/sprites/target.png" id="2_5276i"]
 [ext_resource type="AudioStream" uid="uid://dwl2yoqhx3tfj" path="res://assets/sfx/revolver-spin.mp3" id="3_bhahc"]
 [ext_resource type="AudioStream" uid="uid://cns88gt1tmxhd" path="res://assets/sfx/silenced-shot.mp3" id="4_x5fup"]
 

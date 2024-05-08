@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cojwxbjwdbtqj"
-path="res://.godot/imported/idle_up_eye.png-2622847b46aef5466ab02394b9a01092.ctex"
+uid="uid://c8g6srkvkk2ye"
+path="res://.godot/imported/lab_tile.png-76b32557e2d8e01b30dce12f217ab858.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://chimerin/assets/idle_up_eye.png"
-dest_files=["res://.godot/imported/idle_up_eye.png-2622847b46aef5466ab02394b9a01092.ctex"]
+source_file="res://assets/sprites/lab_tile.png"
+dest_files=["res://.godot/imported/lab_tile.png-76b32557e2d8e01b30dce12f217ab858.ctex"]
 
 [params]
 

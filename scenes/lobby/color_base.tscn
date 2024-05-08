@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dg7r13os1b60i"]
 
-[ext_resource type="Script" path="res://scenes/color_base.gd" id="1_a03pu"]
-[ext_resource type="Texture2D" uid="uid://b4o3fnj7s6cym" path="res://assets/white_32.png" id="2_csg1e"]
+[ext_resource type="Script" path="res://scenes/lobby/color_base.gd" id="1_a03pu"]
+[ext_resource type="Texture2D" uid="uid://b4o3fnj7s6cym" path="res://assets/sprites/white_32.png" id="2_csg1e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fml2g"]
 size = Vector2(320, 320)
