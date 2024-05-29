@@ -23,7 +23,7 @@ func _process(delta: float) -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if body is Chimerin:
 		var player = body as Chimerin
-		player_ready.emit(player.data, true)
+		player_ready.emit(player.pc.data, true)
 
 
 func enable(value: bool) -> void:
@@ -40,7 +40,7 @@ func enable(value: bool) -> void:
 func _on_body_exited(body: Node2D) -> void:
 	if body is Chimerin:
 		var player = body as Chimerin
-		player_ready.emit(player.data, false)
+		player_ready.emit(player.pc.data, false)
 
 
 func _on_timeout():

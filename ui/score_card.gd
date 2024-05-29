@@ -14,7 +14,7 @@ func _ready() -> void:
 
 
 func setup(data: PlayerData) -> void:
-	_set_color(data.primary_color)
+	_set_color(data.color)
 	score.text = str(data.score)
 	#await get_tree().create_timer(1).timeout
 	local_score.text = "+" + str(data.local_score)

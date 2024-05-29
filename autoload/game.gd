@@ -87,7 +87,7 @@ func load_random_game():
 	_game_probability[index] /= 4
 	
 	current_game = games[index]
-	load_scene("res://ui/game_info.tscn")
+	load_scene("res://common/ui/game_info/game_info.tscn")
 	_games_remaining -= 1
 
 

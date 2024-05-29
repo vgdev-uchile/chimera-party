@@ -26,4 +26,4 @@ func _ready() -> void:
 func _on_body_entered(body: Node2D):
 	var player = body as Chimerin
 	if player:
-		player.data.primary_color = color
+		player.pc.set_color(color)
