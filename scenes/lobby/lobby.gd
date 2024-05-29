@@ -30,7 +30,7 @@ func _ready() -> void:
 		for test_player in Game.test_players:
 			var player_data = PlayerData.new()
 			player_data.input = test_player.input
-			player_data.primary_color = test_player.color
+			player_data.color = test_player.color
 			Game.players.append(player_data)
 		Game.load_random_game()
 		return
@@ -69,7 +69,7 @@ func _create_player(player_input: int) -> void:
 	var player_inst = player_scene.instantiate()
 	players.add_child(player_inst)
 	player_inst.setup(player_data)
-	player_data.primary_color_changed.connect(func(color): _on_player_color_changed(player_data))
+	player_inst.pc.color_changed.connect(func(color): _on_player_color_changed(player_data))
 	
 	var lobby_data = LobbyData.new()
 	lobby_data.player = player_inst
@@ -97,7 +97,7 @@ func _on_player_color_changed(player: PlayerData) -> void:
 	for other_player in Game.players:
 		if other_player.input == player.input:
 			continue
-		if other_player.primary_color == player.primary_color:
+		if other_player.color == player.color:
 			var other_lobby_data = _lobby[other_player]
 			var target = other_lobby_data.add_target(target_scene)
 			if target:
